@@ -37,18 +37,18 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-8 pt-4 pointer-events-none">
+    <div className="fixed top-0 left-0 w-full z-50 pointer-events-none">
       <motion.nav
-        className={`mx-auto max-w-7xl pointer-events-auto transition-all duration-500 rounded-2xl border border-white/20 shadow-2xl py-2 ${
+        className={`w-full pointer-events-auto transition-all duration-500 border-b border-white/10 shadow-lg py-2 ${
           isScrolled 
-            ? "bg-white/70 backdrop-blur-xl" 
+            ? "bg-white/80 backdrop-blur-xl" 
             : "bg-white/40 backdrop-blur-md"
         }`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
       >
-        <div className="px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" onClick={scrollToTop} className="flex-shrink-0">
             <motion.img
@@ -59,10 +59,10 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* Desktop Navigation & Mobile Toggle - Right Side */}
-          <div className="flex items-center gap-6">
-            <div className="hidden lg:flex items-center gap-1">
-              {navItems.map(({ label, to }) => {
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
+            <div className="flex items-center gap-1">
+              {navItems.filter(item => item.label !== 'Contact').map(({ label, to }) => {
                 const isActive = location.pathname === to;
                 return (
                   <Link
@@ -87,6 +87,22 @@ const Navbar = () => {
                 );
               })}
             </div>
+          </div>
+
+          {/* Right Side - Contact Now & Mobile Toggle */}
+          <div className="flex items-center gap-4">
+            {/* Desktop Contact Now Button */}
+            <Link to="/contact" className="hidden lg:block">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleNavClick('/contact')}
+                className="flex items-center gap-2 px-6 py-2.5 bg-primary text-white rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all"
+              >
+                <span>Contact Now</span>
+                <FaArrowRight className="text-xs" />
+              </motion.button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
