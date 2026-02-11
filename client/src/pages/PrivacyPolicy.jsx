@@ -1,108 +1,151 @@
 import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import { Shield, Eye, Lock, Share2, Cookie, UserCheck, Mail } from "lucide-react";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const sections = [
+    {
+      icon: <Eye className="w-6 h-6 text-primary" />,
+      title: "Information We Collect",
+      content: (
+        <>
+          <p className="mb-4 text-gray-600">We may collect the following information:</p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {[
+              "Personal details (name, email)",
+              "Contact form submissions",
+              "Coaching enquiry details",
+              "App usage & interaction data",
+              "Technical device data",
+              "Browser & IP information"
+            ].map((item, i) => (
+              <li key={i} className="flex items-center gap-2 text-sm text-gray-600 bg-primary-muted/30 p-2 rounded-lg border border-primary/5">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    },
+    {
+      icon: <Shield className="w-6 h-6 text-primary" />,
+      title: "How We Use Your Information",
+      content: (
+        <div className="space-y-4">
+          <p className="text-gray-600">Your data helps us provide better services, respond to your enquiries, and improve your overall experience with our coaching tools and app.</p>
+          <div className="p-4 bg-gray-50 rounded-xl border border-gray-100 italic text-sm text-gray-500">
+            "We do not sell or misuse your personal data. Your trust is our priority."
+          </div>
+        </div>
+      )
+    },
+    {
+      icon: <Lock className="w-6 h-6 text-primary" />,
+      title: "Data Storage & Security",
+      content: (
+        <p className="text-gray-600">
+          We implement industry-standard technical and organizational measures to ensure your data is stored securely and accessed only by authorized personnel.
+        </p>
+      )
+    },
+    {
+      icon: <Cookie className="w-6 h-6 text-primary" />,
+      title: "Cookies",
+      content: (
+        <p className="text-gray-600">
+          Our website uses essential cookies to improve performance and understand user behavior. You can manage these through your browser settings at any time.
+        </p>
+      )
+    }
+  ];
+
   return (
-    <div className="bg-white min-h-screen pt-24 pb-16">
-      <div className="max-w-3xl mx-auto px-6">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-        <p className="text-primary font-medium mb-8">Your Privacy Matters</p>
-
-        <div className="prose prose-primary max-w-none text-gray-600 space-y-6 text-sm leading-relaxed">
-          <p>
-            Better Health Project is committed to protecting your privacy and handling your personal information responsibly and transparently.
-          </p>
-          
-          <p>
-            This Privacy Policy explains how we collect, use, and protect your information when you use our website, app, or services.
-          </p>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">Information We Collect</h2>
-            <p className="mb-3">We may collect the following information:</p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>Personal details such as name and email address</li>
-              <li>Contact information submitted through forms</li>
-              <li>Information related to coaching services or enquiries</li>
-              <li>App usage and interaction data</li>
-              <li>Technical data such as browser type, device, and IP address</li>
-            </ul>
-            <p className="mt-3 italic">We only collect information necessary to provide our services effectively.</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">How We Use Your Information</h2>
-            <p className="mb-3">Your information may be used to:</p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>Provide coaching services and support</li>
-              <li>Respond to enquiries and communications</li>
-              <li>Manage your account and access to services</li>
-              <li>Improve our website, app, and user experience</li>
-              <li>Meet legal or regulatory requirements</li>
-            </ul>
-            <p className="mt-3 italic">We do not sell or misuse your personal data.</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">Data Storage & Security</h2>
-            <p>
-              We take reasonable steps to protect your information using appropriate technical and organisational measures.
+    <div className="bg-gray-50/50 pt-16 pb-20">
+      {/* Hero Section */}
+      <div className="bg-white border-b border-gray-100 mb-12 py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-3xl"
+          >
+            <div className="inline-flex items-center gap-2 bg-primary-muted text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+              <Shield className="w-3 h-3" />
+              Legal & Privacy
+            </div>
+            <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">
+              Privacy <span className="text-primary">Policy</span>
+            </h1>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              At Better Health Project, we value your trust. This policy outlines how we handle your personal data with transparency and care.
             </p>
-            <p>
-              Access to personal data is limited to authorised individuals only.
-            </p>
-          </section>
+          </motion.div>
+        </div>
+      </div>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">Sharing of Information</h2>
-            <p className="mb-3">We do not share your personal information with third parties except:</p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>When required to provide our services (e.g. secure payment processors)</li>
-              <li>When legally required</li>
-              <li>With trusted service providers who comply with data protection standards</li>
-            </ul>
-          </section>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-8">
+            {sections.map((section, index) => (
+              <motion.section
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-primary-muted rounded-2xl flex items-center justify-center">
+                    {section.icon}
+                  </div>
+                  <h2 className="text-2xl font-bold text-gray-900">{section.title}</h2>
+                </div>
+                <div className="prose prose-sm max-w-none">
+                  {section.content}
+                </div>
+              </motion.section>
+            ))}
+          </div>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">Cookies</h2>
-            <p className="mb-3">Our website may use cookies to:</p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>Improve functionality and performance</li>
-              <li>Understand how visitors use our site</li>
-            </ul>
-            <p className="mt-3">You can control cookie preferences through your browser settings.</p>
-          </section>
+          {/* Sidebar / Contact Card */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-24 space-y-6">
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="bg-primary rounded-[2rem] p-8 text-white shadow-xl shadow-primary/20 relative overflow-hidden"
+              >
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md">
+                    <Mail className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3">Questions?</h3>
+                  <p className="text-primary-light mb-6 text-sm">
+                    If you have any questions about your data or this policy, our team is here to help.
+                  </p>
+                  <a 
+                    href="mailto:hello@betterhealthproject.com" 
+                    className="block w-full bg-white text-primary font-bold py-4 rounded-2xl text-center hover:bg-gray-50 transition-colors shadow-lg"
+                  >
+                    Contact Us
+                  </a>
+                </div>
+                {/* Decorative circle */}
+                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
+              </motion.div>
 
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">Your Rights</h2>
-            <p className="mb-3">You have the right to:</p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>Access your personal data</li>
-              <li>Request corrections or updates</li>
-              <li>Request deletion of your data where applicable</li>
-            </ul>
-            <p className="mt-3">To make a request, please contact us using the details below.</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">Contact Us</h2>
-            <p>
-              If you have questions about this Privacy Policy or how your data is handled, please contact:
-            </p>
-            <p className="font-medium text-gray-900 mt-2">
-              Email: hello@betterhealthproject.com
-            </p>
-          </section>
-
-          <section className="pt-8 border-t border-gray-100">
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">Policy Updates</h2>
-            <p>
-              This Privacy Policy may be updated from time to time. Any changes will be posted on this page.
-            </p>
-          </section>
+              <div className="p-6 bg-white rounded-2xl border border-gray-100 text-xs text-gray-400 leading-relaxed">
+                Last updated: February 11, 2026. Better Health Project reserves the right to update this policy as needed.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
