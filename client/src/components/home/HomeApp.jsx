@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, Smartphone, Zap, ShieldCheck, Target } from 'lucide-react';
 import GlobalHeading from '../common/GlobalHeading';
+import CarouselSection from './CarouselSection';
 import { homeAppFeatures as features, homeAppData as data } from '../../data/homeData';
 
 const HomeApp = () => {
@@ -88,26 +89,16 @@ const HomeApp = () => {
               </motion.div>
             </motion.div>
 
-            {/* Mockup Right */}
+            {/* Carousel Right */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, x: 20 }}
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative flex justify-center lg:justify-center"
+              className="relative flex justify-center lg:justify-center w-full"
             >
-              {/* Main Phone Mockup */}
-              <div className="relative z-10 w-[180px] md:w-[210px] aspect-[9/19] bg-gray-900 rounded-[1.75rem] p-2 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.25)] border-[4px] border-gray-800">
-                {/* Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-4 bg-gray-800 rounded-b-lg z-20" />
-                
-                <div className="w-full h-full rounded-[1.4rem] overflow-hidden bg-white">
-                   <img 
-                     src={data.image} 
-                     alt="App Interface"
-                     className="w-full h-full object-cover"
-                   />
-                </div>
+              <div className="w-full max-w-md scale-90 md:scale-100">
+                <CarouselSection showHeader={false} />
               </div>
 
               {/* Decorative Floating Elements */}
