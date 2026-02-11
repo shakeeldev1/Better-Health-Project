@@ -92,22 +92,26 @@ export const familyScenarios = [
   {
     icon: <Clock className="text-primary" />,
     title: "Busy Parents",
-    description: "Simplify meals and routines so health fits your limited schedule naturally."
+    description: "Simplify meals and routines so health fits your limited schedule naturally.",
+    bgImage: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp'
   },
   {
     icon: <Baby className="text-primary" />,
     title: "Young Children",
-    description: "Build healthy habits early without the constant negotiation."
+    description: "Build healthy habits early without the constant negotiation.",
+    bgImage: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp'
   },
   {
     icon: <Target className="text-primary" />,
     title: "Different Goals",
-    description: "Align individual targets like fat loss or energy under one practical family plan."
+    description: "Align individual targets like fat loss or energy under one practical family plan.",
+    bgImage: 'https://images.unsplash.com/photo-1484981138541-3d074aa97716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp'
   },
   {
     icon: <Zap className="text-primary" />,
     title: "Inconsistent Routines",
-    description: "Build systems that keep your family moving forward."
+    description: "Build systems that keep your family moving forward.",
+    bgImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp'
   }
 ];
 

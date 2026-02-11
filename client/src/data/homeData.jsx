@@ -90,7 +90,7 @@ export const homeIncludedItems = [
   {
     icon: <Apple size={24} />,
     title: "Personalised Nutrition",
-    description: "Simple, flexible nutrition guidance tailored to you or your family."
+    description: "Simple, flexible nutrition guidance tailored to you."
   },
   {
     icon: <Dumbbell size={24} />,
