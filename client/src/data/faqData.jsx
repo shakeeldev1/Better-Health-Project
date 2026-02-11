@@ -59,10 +59,11 @@ export const faqSwiperSlides = [
     ),
     title: "Everything You Need to Know",
     subtitle: "We know starting something new comes with questions. Below you’ll find clear, honest answers to the most common ones we receive.",
-    bgImage: 'https://images.unsplash.com/photo-1557425955-df376b5903c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     button1: "Common Questions",
     button2: "Get In Touch"
   },
+  
   {
     id: 2,
     badge: (
@@ -73,7 +74,7 @@ export const faqSwiperSlides = [
     ),
     title: "Built for Your Real Life",
     subtitle: "No extreme rules or short-term fixes. We focus on education and systems that adapt to your lifestyle, ensuring long-term success.",
-    bgImage: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: 'https://images.unsplash.com/photo-1557425955-df376b5903c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Our Approach",
     button2: "Read FAQs"
   },
