@@ -17,7 +17,7 @@ export const contactSwiperSlides = [
     title: "How Can We",
     highlightText: "Help?",
     description: "Whether you have questions about family coaching, e-books, or starting your own journey, we're here to provide clarity.",
-    bgImage: "https://images.unsplash.com/photo-1516387760770-fb9a8a57b23e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    bgImage: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=75&fm=webp",
     button1: "Get in Touch",
     button2: "Our Services"
   },
