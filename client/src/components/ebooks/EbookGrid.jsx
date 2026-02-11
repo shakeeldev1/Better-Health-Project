@@ -1,72 +1,113 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShoppingCart, CheckCircle2, ShieldCheck, Download, FileText } from 'lucide-react';
-import GlobalHeading from '../common/GlobalHeading';
+import { ShoppingCart, CheckCircle2 } from 'lucide-react';
 import { ebooks, ebookGridData as data } from '../../data/ebookData';
+import GlobalHeading from '../common/GlobalHeading';
 
 const EbookGrid = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.1,
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  };
+
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen w-full bg-white py-16 px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Title using GlobalHeading */}
         <GlobalHeading 
           badge={data.badge}
           title={data.title}
           highlightText={data.highlightText}
           description={data.description}
-          className="mb-16"
+          center={true}
+          className="mb-12"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {ebooks.map((book, index) => (
-            <motion.div
-              key={book.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 flex flex-col"
-            >
-              <div className="h-64 relative overflow-hidden">
-                <img src={book.image} alt={book.title} className="w-full h-full object-cover" />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full font-bold text-primary shadow-sm">
-                  {book.price}
-                </div>
-              </div>
-
-              <div className="p-8 flex-grow flex flex-col">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{book.title}</h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">{book.description}</p>
-                <p className="text-primary font-medium mb-6 italic text-sm">{book.details}</p>
-
-                <div className="mb-8 flex-grow">
-                  <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Who it's for:</h4>
-                  <ul className="space-y-3">
-                    {book.whoItIsFor.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                        <CheckCircle2 size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-auto pt-6 border-t border-gray-50">
-                  <button className="w-full group flex items-center justify-center gap-2 bg-primary text-white px-6 py-4 rounded-xl font-bold hover:bg-primary-dark transition-all shadow-lg hover:shadow-primary-dark/20 active:scale-[0.98]">
-                    <ShoppingCart size={20} />
-                    Buy Now
-                  </button>
-                  <div className="mt-4 flex items-center justify-center gap-4 text-[10px] text-gray-400 uppercase tracking-widest font-semibold">
-                    <span className="flex items-center gap-1"><ShieldCheck size={12} /> Secure Checkout</span>
-                    <span className="flex items-center gap-1"><Download size={12} /> Instant Access</span>
-                    <span className="flex items-center gap-1"><FileText size={12} /> PDF</span>
+        {/* Ebooks Grid */}
+        <div className="flex justify-center">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {ebooks.map((ebook) => (
+              <motion.div 
+                key={ebook.id} 
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-2 hover:border-primary/20 flex flex-col group h-[430px]"
+                variants={cardVariants}
+              >
+                {/* Ebook Image */}
+                <div className="relative h-40 overflow-hidden">
+                  <img 
+                    src={ebook.image}
+                    alt={ebook.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute top-2.5 right-2.5">
+                    <span className="bg-primary text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-lg">
+                      {ebook.price}
+                    </span>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+
+                {/* Ebook Content */}
+                <div className="p-4 flex flex-col flex-grow">
+                  <h3 className="text-base font-bold text-gray-900 mb-1.5 group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                    {ebook.title}
+                  </h3>
+
+                  <p className="text-[11px] leading-relaxed text-gray-600 mb-2.5 line-clamp-2">
+                    {ebook.description}
+                  </p>
+
+                  {/* Features/Who it's for */}
+                  <div className="space-y-1 mb-3 flex-grow">
+                    {ebook.whoItIsFor.slice(0, 3).map((item, index) => (
+                      <div key={index} className="flex items-start gap-1.5 text-[11px] text-gray-600">
+                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="line-clamp-1">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Action Button */}
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full bg-primary text-white py-2 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-dark transition-all duration-300 shadow-lg shadow-primary/20 text-xs"
+                  >
+                    <ShoppingCart size={14} />
+                    Buy Now
+                  </motion.button>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

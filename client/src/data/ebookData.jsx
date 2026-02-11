@@ -57,7 +57,7 @@ export const ebookSwiperSlides = [
     ),
     title: "Simple. Actionable. Practical.",
     subtitle: "Our e-books are designed to give you clarity, structure, and tools you can use immediately. No fluff. No extreme rules. Just practical guidance.",
-    bgImage: 'https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: 'https://media.istockphoto.com/id/2162169941/photo/bookstore.webp?a=1&b=1&s=612x612&w=0&k=20&c=WNj3n_G7IsFUgsh0tnS0-NHVL8JbJyqtiZFhpdq6ch0=',
     button1: "View Library",
     button2: "Learn More"
   },
@@ -85,7 +85,7 @@ export const ebookSwiperSlides = [
     ),
     title: "Strategies for Long-Term Success",
     subtitle: "Learn how to set systems that work for your schedule. Our guides help you build consistency without the burnout.",
-    bgImage: 'https://images.unsplash.com/photo-1506784919141-935049915314?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: 'https://media.istockphoto.com/id/1389876555/photo/adult-students-studying-together-in-library.webp?a=1&b=1&s=612x612&w=0&k=20&c=g0K5t0WMujllQV-VD15CoZEpWzINCoX0SMIfl6cSAu8=',
     button1: "Explore Guides",
     button2: "See Results"
   },
