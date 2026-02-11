@@ -13,7 +13,7 @@ export const homeSwiperSlides = [
       { icon: CheckCircle, text: 'Sustainable Habits' },
       { icon: CheckCircle, text: 'Real Results' }
     ],
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1608138278545-366680accc66?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     badge: 'Family Wellness',
@@ -26,7 +26,7 @@ export const homeSwiperSlides = [
       { icon: CheckCircle, text: 'Practical Nutrition' },
       { icon: CheckCircle, text: 'Shared Success' }
     ],
-    image: "https://images.unsplash.com/photo-1545231027-63b6af0c82bf?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1550657636-67d6a3a05a5d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDMwfHx8ZW58MHx8fHx8",
   },
   {
     badge: 'Digital Tools',
@@ -138,7 +138,7 @@ export const homeAboutData = {
     "Practical Strategies",
     "Supportive Environment"
   ],
-  image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  image: "https://plus.unsplash.com/premium_photo-1667762241847-37471e8c8bc0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8SGVhbHRofGVufDB8fDB8fHww"
 };
 
 export const homeAppData = {

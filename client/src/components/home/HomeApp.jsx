@@ -1,68 +1,128 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, Smartphone, Zap, ShieldCheck, Target } from 'lucide-react';
 import GlobalHeading from '../common/GlobalHeading';
 import { homeAppFeatures as features, homeAppData as data } from '../../data/homeData';
 
 const HomeApp = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
+  // Feature icons mapping for more visual interest
+  const featureIcons = [
+    <Smartphone className="w-5 h-5" />,
+    <ShieldCheck className="w-5 h-5" />,
+    <Target className="w-5 h-5" />,
+    <Zap className="w-5 h-5" />,
+    <Check className="w-5 h-5" />
+  ];
 
   return (
-    <section className="py-24 bg-primary-dark text-white overflow-hidden">
+    <section className="py-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <GlobalHeading 
-              badge={data.badge}
-              title={data.title}
-              highlightText={data.highlightText}
-              description={data.description}
-              center={false}
-              className="mb-10"
-              light={true}
-            />
-            
-            <div className="space-y-4 mb-12">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
-                    <Check size={14} className="text-primary-dark" />
-                  </div>
-                  <span className="text-lg text-primary-light/90 font-medium">{feature}</span>
+        <div className="bg-primary-muted/30 rounded-[2rem] p-5 md:p-8 lg:p-10 relative overflow-hidden border border-primary/5">
+          {/* Decorative subtle background pattern */}
+          <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03] pointer-events-none">
+            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <pattern id="grid-app" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid-app)" />
+            </svg>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center relative z-10">
+            {/* Content Left */}
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <GlobalHeading 
+                badge={data.badge}
+                title={data.title}
+                highlightText={data.highlightText}
+                description={data.description}
+                center={false}
+                className="mb-4"
+              />
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+                {features.map((feature, index) => (
+                  <motion.div 
+                    key={index} 
+                    variants={itemVariants}
+                    className="flex items-center gap-2.5 bg-white p-2.5 rounded-lg shadow-sm border border-primary/5 hover:border-primary/20 transition-all duration-300"
+                  >
+                    <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center text-primary">
+                      {featureIcons[index] || <Check className="w-4 h-4" />}
+                    </div>
+                    <span className="text-xs md:text-sm text-gray-700 font-semibold">{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div variants={itemVariants} className="flex flex-wrap gap-2.5">
+                <a href="#" className="flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-4" />
+                </a>
+                <a href="#" className="flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" className="h-4" />
+                </a>
+              </motion.div>
+            </motion.div>
+
+            {/* Mockup Right */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, x: 20 }}
+              whileInView={{ opacity: 1, scale: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative flex justify-center lg:justify-center"
+            >
+              {/* Main Phone Mockup */}
+              <div className="relative z-10 w-[180px] md:w-[210px] aspect-[9/19] bg-gray-900 rounded-[1.75rem] p-2 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.25)] border-[4px] border-gray-800">
+                {/* Notch */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-4 bg-gray-800 rounded-b-lg z-20" />
+                
+                <div className="w-full h-full rounded-[1.4rem] overflow-hidden bg-white">
+                   <img 
+                     src={data.image} 
+                     alt="App Interface"
+                     className="w-full h-full object-cover"
+                   />
                 </div>
-              ))}
-            </div>
+              </div>
 
-            <div className="flex flex-wrap gap-4">
-              <a href="#" className="flex items-center gap-3 bg-black hover:bg-gray-900 transition-colors px-6 py-3 rounded-xl border border-gray-800">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Apple Store" className="h-8" />
-              </a>
-              <a href="#" className="flex items-center gap-3 bg-black hover:bg-gray-900 transition-colors px-6 py-3 rounded-xl border border-gray-800">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-8" />
-              </a>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            {/* Mockup of phone screen */}
-            <div className="relative mx-auto w-[280px] md:w-[320px] aspect-[9/19] bg-gray-800 rounded-[3rem] border-8 border-gray-800 shadow-2xl overflow-hidden">
-               <img 
-                 src={data.image} 
-                 alt="App Screenshot"
-                 className="w-full h-full object-cover"
-               />
-            </div>
-            {/* Decorative glows */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/20 blur-[100px] -z-10 rounded-full" />
-          </motion.div>
+              {/* Decorative Floating Elements */}
+              <motion.div 
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10" 
+              />
+              <motion.div 
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10" 
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

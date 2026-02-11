@@ -6,9 +6,9 @@ import { homeAboutData as data } from '../../data/homeData';
 
 const HomeAbout = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -23,7 +23,7 @@ const HomeAbout = () => {
               center={false}
               className="mb-0"
             />
-            <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+            <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
               {data.paragraphs.map((paragraph, index) => (
                 <p key={index} className={index === 0 ? "font-semibold text-primary" : ""}>
                   {paragraph}
@@ -31,7 +31,7 @@ const HomeAbout = () => {
               ))}
             </div>
             
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {data.points.map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-muted flex items-center justify-center">
