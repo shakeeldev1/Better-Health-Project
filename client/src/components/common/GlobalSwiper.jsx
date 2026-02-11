@@ -42,7 +42,7 @@ const bgImageVariants = {
     show: {
         scale: 1.1,
         transition: {
-            duration: 5, // Match the autoplay delay for a slow, continuous effect
+            duration: 2, // Match the autoplay delay for a slow, continuous effect
             ease: "linear",
             // You can also add a subtle pan
             // x: ["0%", "5%"],
@@ -64,7 +64,7 @@ const GlobalSwiper = ({ slides, buttonStyle = 'default', showIcon = false }) => 
                 navigation
                 pagination={{ clickable: true }}
                 autoplay={{
-                    delay: 5000,
+                    delay: 2000,
                     disableOnInteraction: false,
                 }}
                 effect="fade"
@@ -93,7 +93,7 @@ const GlobalSwiper = ({ slides, buttonStyle = 'default', showIcon = false }) => 
                                         variants={bgImageVariants}
                                         initial="hidden"
                                         animate={isActive ? "show" : "hidden"}
-                                        transition={{ duration: 5000, ease: "linear" }}
+                                        transition={{ duration: 2000, ease: "linear" }}
                                     />
 
                                     {/* Dark Overlay - ALWAYS SHOW for better text readability */}
