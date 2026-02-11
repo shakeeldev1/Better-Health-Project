@@ -41,9 +41,9 @@ const Navbar = () => {
     }
   };
 
-  const handleLoginClick = () => {
+  const handleContactClick = () => {
     setMenuOpen(false);
-    navigate("/login");
+    navigate("/contact");
   };
 
   return (
@@ -67,9 +67,9 @@ const Navbar = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.img
-                  src="/assets/bhp-logo.png"
+                  src="/bettet health project.png"
                   alt="Better Health Project logo"
-                  className={`transition-all duration-500 h-10 w-auto`}
+                  className={`transition-all duration-500 h-16 w-auto object-contain`}
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
@@ -117,15 +117,15 @@ const Navbar = () => {
 
           {/* Login & Mobile Menu - Right */}
           <div className="w-1/4 flex justify-end items-center">
-            {/* Desktop Login Button */}
+            {/* Desktop Contact Button */}
             <div className="hidden lg:block">
               <motion.button
-                onClick={handleLoginClick}
-                className="px-6 py-2 bg-black text-white rounded-xl font-bold hover:bg-gray-800 transition-all shadow-xl shadow-black/10 text-sm whitespace-nowrap"
-                whileHover={{ scale: 1.02 }}
+                onClick={handleContactClick}
+                className="px-6 py-2.5 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 text-sm whitespace-nowrap"
+                whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Client Portal
+                Contact Now
               </motion.button>
             </div>
 
@@ -155,9 +155,9 @@ const Navbar = () => {
             <div className="p-6 flex flex-col h-full">
               <div className="flex justify-between items-center mb-12">
                 <img
-                  src="/assets/bhp-logo.png"
+                  src="/bettet health project.png"
                   alt="Logo"
-                  className="h-8 w-auto"
+                  className="h-14 w-auto object-contain"
                 />
                 <button
                   onClick={() => setMenuOpen(false)}
@@ -192,10 +192,10 @@ const Navbar = () => {
 
               <div className="mt-8 pt-8 border-t border-gray-100">
                 <button
-                  onClick={handleLoginClick}
-                  className="w-full py-4 bg-black text-white rounded-2xl text-lg font-bold shadow-2xl"
+                  onClick={handleContactClick}
+                  className="w-full py-4 bg-primary text-white rounded-xl text-lg font-semibold active:scale-98 transition-all"
                 >
-                  Client Portal
+                  Contact Now
                 </button>
               </div>
             </div>

@@ -13,10 +13,10 @@ const Footer = () => {
         <div className="space-y-4">
           <Link to="/" className="inline-block">
             <img
-              src="/assets/bhp-logo.png"
+              src="/bettet health project.png"
               alt="Better Health Project Logo"
               loading="lazy"
-              className="h-10 w-auto brightness-0 invert"
+              className="h-20 w-auto object-contain"
             />
           </Link>
           <p className="text-gray-400 leading-relaxed text-sm">
@@ -94,10 +94,36 @@ const Footer = () => {
               placeholder="Email address" 
               className="bg-gray-800 border-none rounded-lg px-4 py-2 text-sm focus:ring-1 focus:ring-primary outline-none"
             />
-            <button className="bg-primary hover:bg-primary/90 text-primary-dark font-bold py-2 rounded-lg text-sm transition-colors">
+            <button className="bg-primary hover:bg-primary/90 text-white font-bold py-2 rounded-lg text-sm transition-colors">
               Subscribe
             </button>
           </form>
+
+          {/* App Store Buttons */}
+          <div className="flex items-center gap-3 mt-4">
+            <a 
+              href="#" 
+              className="transition-transform hover:scale-105"
+              aria-label="Download on App Store"
+            >
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
+                alt="App Store" 
+                className="h-10 w-auto" 
+              />
+            </a>
+            <a 
+              href="#" 
+              className="transition-transform hover:scale-105"
+              aria-label="Get it on Google Play"
+            >
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                alt="Play Store" 
+                className="h-10 w-auto" 
+              />
+            </a>
+          </div>
         </div>
       </div>
 
