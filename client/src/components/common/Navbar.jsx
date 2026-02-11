@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaArrowRight } from "react-icons/fa";
 import { navItems } from "../../data/commonData";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -23,16 +22,12 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
 
-  // Special styling page: highlight Family Coaching similarly to previous vision-mission page
-  const isFamilyCoachingPage = location.pathname === '/family-coaching';
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleNavClick = (to) => {
     setMenuOpen(false);
-    setActiveDropdown(null);
     if (location.pathname === to) {
       scrollToTop();
     } else {
@@ -41,168 +36,112 @@ const Navbar = () => {
     }
   };
 
-  const handleContactClick = () => {
-    setMenuOpen(false);
-    navigate("/contact");
-  };
-
   return (
-    <motion.nav
-      className="fixed top-0 left-0 w-full z-50"
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 100, damping: 20 }}
-    >
-      {/* Main Navigation Bar */}
-      <div
-        className={`relative transition-all duration-500 bg-white/95 backdrop-blur-xl shadow-2xl shadow-black/10 py-3 text-black leading-relaxed`}
+    <div className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-8 pt-4 pointer-events-none">
+      <motion.nav
+        className={`mx-auto max-w-7xl pointer-events-auto transition-all duration-500 rounded-2xl border border-white/20 shadow-2xl py-2 ${
+          isScrolled 
+            ? "bg-white/70 backdrop-blur-xl" 
+            : "bg-white/40 backdrop-blur-md"
+        }`}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 100, damping: 20 }}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          {/* Logo - Left */}
-          <div className="w-1/4 flex justify-start">
-            <Link to="/" onClick={scrollToTop} className="flex items-center">
-              <motion.div
-                className="relative"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <motion.img
-                  src="/bettet health project.png"
-                  alt="Better Health Project logo"
-                  className={`transition-all duration-500 h-16 w-auto object-contain`}
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                />
-              </motion.div>
-            </Link>
-          </div>
+        <div className="px-6 flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" onClick={scrollToTop} className="flex-shrink-0">
+            <motion.img
+              src="/bettet health project.png"
+              alt="Better Health Project"
+              className="h-12 sm:h-14 lg:h-16 w-auto object-contain transition-all duration-500 my-[-8px] sm:my-[-12px] lg:my-[-16px]"
+              whileHover={{ scale: 1.05 }}
+            />
+          </Link>
 
-          {/* Desktop Navigation - Center */}
-          <div className="hidden lg:flex flex-1 justify-center items-center space-x-2">
-            {navItems.map(({ label, to }, index) => (
-              <motion.div
-                key={label}
-                className="relative group"
-                custom={index}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.4 }}
-                onHoverStart={() => setActiveDropdown(label)}
-                onHoverEnd={() => setActiveDropdown(null)}
-              >
-                <Link
-                  to={to}
-                  onClick={() => handleNavClick(to)}
-                  className={`px-4 py-2 rounded-xl text-[15px] font-semibold transition-all duration-300 flex flex-col items-center justify-center text-center whitespace-nowrap relative group ${
-                    location.pathname === to
-                      ? "bg-primary text-white shadow-lg shadow-primary/20"
-                      : "text-gray-600 hover:bg-gray-100 hover:text-primary"
-                  }`}
-                >
-                  {label}
-                  {/* Bottom Line Indicator - Inside the background div */}
-                  <motion.div
-                    className={`absolute bottom-1.5 left-1/2 h-0.5 rounded-full transition-all duration-300 -translate-x-1/2 ${
-                      location.pathname === to 
-                        ? "w-1/3 bg-white/80" 
-                        : "w-0 group-hover:w-1/3 bg-primary/80"
+          {/* Desktop Navigation & Mobile Toggle - Right Side */}
+          <div className="flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-1">
+              {navItems.map(({ label, to }) => {
+                const isActive = location.pathname === to;
+                return (
+                  <Link
+                    key={label}
+                    to={to}
+                    onClick={() => handleNavClick(to)}
+                    className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                      isActive 
+                        ? "text-primary" 
+                        : "text-gray-700 hover:text-primary hover:bg-white/50"
                     }`}
-                    layoutId="navUnderline"
-                  />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Login & Mobile Menu - Right */}
-          <div className="w-1/4 flex justify-end items-center">
-            {/* Desktop Contact Button */}
-            <div className="hidden lg:block">
-              <motion.button
-                onClick={handleContactClick}
-                className="px-6 py-2.5 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 text-sm whitespace-nowrap"
-                whileHover={{ y: -1 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Contact Now
-              </motion.button>
+                  >
+                    <span className="relative z-10">{label}</span>
+                    {isActive && (
+                      <motion.div
+                        layoutId="navActiveIndicator"
+                        className="absolute inset-0 bg-white shadow-sm rounded-xl -z-0"
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden">
-              <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                className="p-2 text-gray-600 hover:text-primary transition-colors"
-              >
-                {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-              </button>
-            </div>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="lg:hidden p-2.5 bg-white/50 hover:bg-white transition-all rounded-xl border border-white/50"
+            >
+              {menuOpen ? <FaTimes size={20} className="text-primary" /> : <FaBars size={20} className="text-gray-700" />}
+            </button>
           </div>
         </div>
-      </div>
+      </motion.nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Professional Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-white z-[60] lg:hidden overflow-y-auto"
-          >
-            <div className="p-6 flex flex-col h-full">
-              <div className="flex justify-between items-center mb-12">
-                <img
-                  src="/bettet health project.png"
-                  alt="Logo"
-                  className="h-14 w-auto object-contain"
-                />
-                <button
-                  onClick={() => setMenuOpen(false)}
-                  className="p-2 text-gray-600"
-                >
-                  <FaTimes size={24} />
-                </button>
-              </div>
-
-              <div className="space-y-4 flex-grow">
-                {navItems.map(({ label, to }, index) => (
-                  <motion.div
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-gray-900/20 backdrop-blur-sm z-[-1] pointer-events-auto lg:hidden"
+              onClick={() => setMenuOpen(false)}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -20 }}
+              className="absolute top-24 left-4 right-4 bg-white/90 backdrop-blur-2xl rounded-3xl p-8 shadow-2xl border border-white z-[60] lg:hidden pointer-events-auto overflow-hidden"
+            >
+              <div className="relative z-10 space-y-2">
+                <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-4 opacity-60 px-4">Menu</p>
+                {navItems.map(({ label, to }) => (
+                  <Link
                     key={label}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    to={to}
+                    onClick={() => handleNavClick(to)}
+                    className={`flex items-center justify-between px-6 py-4 rounded-2xl text-lg font-bold transition-all ${
+                      location.pathname === to
+                        ? "bg-primary text-white shadow-xl shadow-primary/20"
+                        : "text-gray-900 hover:bg-gray-50"
+                    }`}
                   >
-                    <Link
-                      to={to}
-                      onClick={() => handleNavClick(to)}
-                      className={`block px-4 py-4 rounded-2xl text-xl font-bold ${
-                        location.pathname === to
-                          ? "bg-primary text-white shadow-xl shadow-primary/20"
-                          : "text-gray-800 hover:bg-gray-50"
-                      }`}
-                    >
-                      {label}
-                    </Link>
-                  </motion.div>
+                    {label}
+                    <FaArrowRight className={`text-sm ${location.pathname === to ? "opacity-100" : "opacity-20"}`} />
+                  </Link>
                 ))}
               </div>
-
-              <div className="mt-8 pt-8 border-t border-gray-100">
-                <button
-                  onClick={handleContactClick}
-                  className="w-full py-4 bg-primary text-white rounded-xl text-lg font-semibold active:scale-98 transition-all"
-                >
-                  Contact Now
-                </button>
-              </div>
-            </div>
-          </motion.div>
+              
+              {/* Decorative background element for mobile menu */}
+              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-0" />
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </div>
   );
 };
 
