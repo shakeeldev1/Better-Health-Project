@@ -150,7 +150,7 @@ export const familyWhoForData = {
   title: "Who Is This",
   highlightText: "For?",
   description: "Our family coaching is designed for households that want to prioritize health together.",
-  image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+  image: "https://images.unsplash.com/photo-1484981138541-3d074aa97716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp"
 };
 
 export const familyWhyDifferentData = {
@@ -192,15 +192,27 @@ export const familyCTAData = {
 export const familyWhoForPoints = [
   {
     title: "Busy Parents",
-    description: "Who want to lead by example and simplify family nutrition."
+    description: "Who want to lead by example and simplify family nutrition without spending hours in the kitchen.",
+    icon: <Clock className="w-6 h-6" />,
+    color: "bg-blue-50 text-blue-600"
   },
   {
     title: "Active Households",
-    description: "Who need a clear plan to balance busy schedules with health goals."
+    description: "Who need a clear plan to balance busy schedules, school runs, and work with shared health goals.",
+    icon: <Activity className="w-6 h-6" />,
+    color: "bg-orange-50 text-orange-600"
   },
   {
     title: "Health-Conscious Families",
-    description: "Who want a structured approach to wellness that involves everyone."
+    description: "Who want a structured approach to wellness that involves everyone and builds lasting habits.",
+    icon: <Heart className="w-6 h-6" />,
+    color: "bg-rose-50 text-rose-600"
+  },
+  {
+    title: "Unified Growth",
+    description: "For households that want to move away from individual diets towards a unified family health culture.",
+    icon: <Users className="w-6 h-6" />,
+    color: "bg-emerald-50 text-emerald-600"
   }
 ];
 
