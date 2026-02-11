@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import GlobalButton from './GlobalButton';
 
 const GlobalCTA = ({ 
   title = "Ready to start?", 
@@ -37,18 +37,48 @@ const GlobalCTA = ({
   return (
     <div className={`w-full max-w-7xl flex flex-col items-center gap-8 z-10 mx-auto mb-8 px-4 ${className}`}> 
       <motion.div
-        className="w-full max-w-4xl bg-primary-muted rounded-[2rem] px-6 py-6 md:py-8 text-center shadow-sm border border-primary/10"
+        className="w-full max-w-4xl bg-white rounded-[2rem] px-6 py-6 md:py-8 text-center shadow-xl shadow-primary/5 border border-primary/10 relative overflow-hidden group"
         variants={cardVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="max-w-2xl mx-auto flex flex-col items-center gap-4"> 
+        {/* Animated Background Elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              rotate: [0, 90, 0],
+              opacity: [0.2, 0.4, 0.2]
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.3, 1],
+              rotate: [0, -90, 0],
+              opacity: [0.2, 0.5, 0.2]
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute -bottom-32 -right-32 w-80 h-80 bg-primary/10 rounded-full blur-3xl"
+          />
+        </div>
+
+        <div className="max-w-2xl mx-auto flex flex-col items-center gap-4 relative z-10"> 
           <motion.h2 
             className="text-xl md:text-2xl lg:text-[1.75rem] font-bold text-gray-900 leading-tight"
             variants={itemVariants}
           >
-            {title} <span className="text-primary">{highlightText}</span>
+            {title} <span className="text-primary relative inline-block">
+              {highlightText}
+              <motion.div 
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                className="absolute bottom-1 left-0 h-1 bg-primary/10 -z-10"
+              />
+            </span>
           </motion.h2>
 
           <motion.p 
@@ -58,19 +88,14 @@ const GlobalCTA = ({
             {description}
           </motion.p>
 
-          <motion.div variants={itemVariants}>
-            <Link 
-              to={buttonLink}
-              className="mt-2 inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform text-sm"
-            >
-              <motion.span
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="block"
-              >
-                {buttonText}
-              </motion.span>
-            </Link>
+          <motion.div 
+            variants={itemVariants}
+            className="mt-2"
+          >
+            <GlobalButton 
+              text={buttonText}
+              link={buttonLink}
+            />
           </motion.div>
         </div>
       </motion.div>

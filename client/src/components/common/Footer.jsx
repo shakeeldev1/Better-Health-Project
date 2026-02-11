@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import GlobalButton from "./GlobalButton";
 import { footerQuickLinks, footerContactInfo, footerSocialLinks } from "../../data/commonData";
 
 const Footer = () => {
@@ -94,9 +95,11 @@ const Footer = () => {
               placeholder="Email address" 
               className="bg-gray-800 border-none rounded-lg px-4 py-2 text-sm focus:ring-1 focus:ring-primary outline-none"
             />
-            <button className="bg-primary hover:bg-primary/90 text-white font-bold py-2 rounded-lg text-sm transition-colors">
-              Subscribe
-            </button>
+            <GlobalButton 
+              text="Subscribe"
+              showArrow={false}
+              className="md"
+            />
           </form>
 
           {/* App Store Buttons */}

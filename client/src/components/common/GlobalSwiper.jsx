@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import { motion } from 'framer-motion'; // <-- Import Framer Motion
+import GlobalButton from './GlobalButton';
 
 // 1. Define the main container variants for stagger effect
 const containerVariants = {
@@ -149,19 +150,21 @@ const GlobalSwiper = ({ slides, buttonStyle = 'default', showIcon = false }) => 
                                                 className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 pb-12"
                                                 variants={itemVariants}
                                             >
-                                                <button className={`
-                                                    ${buttonStyle === 'gradient'
-                                                        ? 'bg-primary hover:bg-primary-dark'
-                                                        : 'bg-white hover:bg-gray-100 text-gray-900'
-                                                    }
-                                                    text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-primary/20
-                                                `}>
-                                                    {slide.button1}
-                                                </button>
-                                                <button className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white px-8 py-3 rounded-full font-semibold border border-white/30 transition-all duration-300">
-                                                    {slide.button2}
-                                                </button>
+                                                <GlobalButton 
+                                                    text={slide.button1}
+                                                    link={slide.to1}
+                                                    variant={buttonStyle === 'gradient' ? 'primary' : 'secondary'}
+                                                    className="lg"
+                                                />
+                                                <GlobalButton 
+                                                    text={slide.button2}
+                                                    link={slide.to2}
+                                                    variant="outline"
+                                                    className="lg"
+                                                    showArrow={false}
+                                                />
                                             </motion.div>
+
                                         </div>
                                     </motion.div>
                                 </div>
