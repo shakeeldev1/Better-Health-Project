@@ -15,7 +15,7 @@ export const familySwiperSlides = [
         Family Coaching
       </span>
     ),
-    title: "A Healthier Family, Built Together",
+    title: "Healthy Families",
     subtitle: "Personalised health support for the entire household. Everyone moves forward with clarity and structure.",
     bgImage: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Join Family Coaching",
@@ -29,7 +29,7 @@ export const familySwiperSlides = [
         Sustainable Habits
       </span>
     ),
-    title: "Health That Fits Real Family Life",
+    title: "Real Life Health",
     subtitle: "No extreme rules or separate plans. Just a practical framework your family can actually stick to.",
     bgImage: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Explore Programs",
@@ -43,7 +43,7 @@ export const familySwiperSlides = [
         Shared Progress
       </span>
     ),
-    title: "One Clear Approach For Everyone",
+    title: "Unified Approach",
     subtitle: "Nutrition and routines that work for all ages, from parents to children, under one plan.",
     bgImage: 'https://images.unsplash.com/photo-1484981138541-3d074aa97716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Start Journey",
@@ -57,9 +57,9 @@ export const familySwiperSlides = [
         Lasting Change
       </span>
     ),
-    title: "Building Healthy Habits Early",
+    title: "Early Habits",
     subtitle: "Set your children up for success by creating structure and understanding around health today.",
-    bgImage: 'https://images.unsplash.com/photo-1536640712247-c5756f3d893b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Join Us",
     button2: "Read Stories"
   }
@@ -84,7 +84,7 @@ export const familyHowItWorksSteps = [
   {
     number: "04",
     title: "Accountability & Education",
-    description: "We focus on teaching your family why things work, not just what to do — so progress lasts."
+    description: "We focus on teaching your family why things work."
   }
 ];
 
@@ -92,22 +92,22 @@ export const familyScenarios = [
   {
     icon: <Clock className="text-primary" />,
     title: "Busy Parents",
-    description: "You want to eat better and stay active, but time is limited. We simplify meals, routines, and training so health fits into your day — not the other way around."
+    description: "Simplify meals and routines so health fits your limited schedule naturally."
   },
   {
     icon: <Baby className="text-primary" />,
-    title: "Families with Young Children",
-    description: "Instead of constant negotiation around food and routines, we create structure that helps children understand and follow healthy habits naturally."
+    title: "Young Children",
+    description: "Build healthy habits early without the constant negotiation."
   },
   {
     icon: <Target className="text-primary" />,
-    title: "Households with Different Goals",
-    description: "Whether one parent wants fat loss and another wants more energy, we align goals under one practical family plan."
+    title: "Different Goals",
+    description: "Align individual targets like fat loss or energy under one practical family plan."
   },
   {
     icon: <Zap className="text-primary" />,
     title: "Inconsistent Routines",
-    description: "If motivation comes and goes, we build systems that keep your family moving forward even on busy or imperfect weeks."
+    description: "Build systems that keep your family moving forward."
   }
 ];
 
