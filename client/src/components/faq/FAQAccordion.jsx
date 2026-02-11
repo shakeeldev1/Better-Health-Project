@@ -3,6 +3,7 @@ import { ChevronDown, ClipboardList, Dumbbell, Users, Smartphone, HelpCircle, St
 import { motion, AnimatePresence } from 'framer-motion';
 import { faqs, faqAccordionData as data } from '../../data/faqData';
 import GlobalHeading from '../common/GlobalHeading';
+import GlobalButton from '../common/GlobalButton';
 
 const FAQAccordion = () => {
   const [activeCategory, setActiveCategory] = useState('general');
@@ -73,29 +74,29 @@ const FAQAccordion = () => {
               const Icon = category.icon;
               const isActive = activeCategory === category.id;
               return (
-                <motion.button
+                <motion.div
                   key={category.id}
                   variants={{
                     hidden: { y: 20, opacity: 0 },
                     visible: { y: 0, opacity: 1 },
                   }}
-                  onClick={() => {
-                    setActiveCategory(category.id);
-                    setOpenFAQ(null);
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 ${
-                    isActive
-                      ? 'bg-primary text-white shadow-lg shadow-primary/20'
-                      : 'bg-white text-gray-600 hover:bg-gray-50 shadow-sm border border-gray-200'
-                  }`}
                 >
-                  <Icon className="w-5 h-5" />
-                  <span className="text-sm md:text-base whitespace-nowrap">{category.name}</span>
-                </motion.button>
+                  <GlobalButton 
+                    text={category.name}
+                    icon={Icon}
+                    isActive={isActive}
+                    variant="ghost"
+                    className="rounded-xl px-6 py-3"
+                    showArrow={false}
+                    onClick={() => {
+                      setActiveCategory(category.id);
+                      setOpenFAQ(null);
+                    }}
+                  />
+                </motion.div>
               );
             })}
+
           </motion.div>
         </div>
       </div>

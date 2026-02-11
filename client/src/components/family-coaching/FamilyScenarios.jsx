@@ -21,8 +21,8 @@ const FamilyScenarios = () => {
           className="mb-12"
         />
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-4 gap-3 md:gap-6">
             {scenarios.map((scenario, index) => (
               <GlobalCard1
                 key={index}
@@ -30,6 +30,7 @@ const FamilyScenarios = () => {
                 icon={scenario.icon}
                 title={scenario.title}
                 description={scenario.description}
+                bgImage={scenario.bgImage}
                 variants={cardVariants}
               />
             ))}

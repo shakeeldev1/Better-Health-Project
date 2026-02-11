@@ -138,29 +138,29 @@ const HomeTransformations = () => {
           </div>
         </div>
 
-        {/* Thumbnail Carousel - Added mt-6 to separate it slightly from the main card */}
-        <div className="flex justify-center items-center gap-2 mb-4 flex-wrap mt-6">
+        {/* Thumbnail Carousel - Added py-8 for top and bottom padding */}
+        <div className="flex justify-center items-center gap-1.5 mb-4 mt-6 py-8 flex-nowrap overflow-x-hidden px-2">
           {testimonials.map((testimonial, index) => (
             <button
               key={testimonial.id}
               onClick={() => handleThumbnailClick(index)}
-              className={`flex flex-col items-center p-2 rounded-lg transition-all duration-300 transform hover:scale-105 ${
+              className={`flex flex-col items-center p-1.5 rounded-xl transition-all duration-300 transform hover:scale-105 min-w-[75px] sm:min-w-[100px] ${
                 index === currentIndex
-                  ? 'bg-white border-2 border-primary shadow-lg'
-                  : 'bg-white border border-gray-200 hover:border-primary/50 shadow-sm'
+                  ? 'bg-white border-2 border-primary shadow-lg scale-105'
+                  : 'bg-white border border-gray-100 hover:border-primary/50 shadow-sm opacity-80 hover:opacity-100'
               }`}
             >
-              {/* Reduced thumbnail image size (w-14) */}
+              {/* Reduced thumbnail image size (w-10) */}
               <img
                 src={testimonial.image}
                 alt={testimonial.name}
-                className="w-14 h-14 rounded-full object-cover mb-1"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover mb-1 border-2 border-primary/10"
               />
-              <p className="text-xs font-bold text-gray-900 text-center leading-none">
+              <p className="text-[10px] sm:text-xs font-bold text-gray-900 text-center leading-none truncate w-full px-1">
                 {testimonial.name}
               </p>
-              <p className="text-[10px] text-primary text-center mt-0.5 leading-none">
-                {testimonial.program}
+              <p className="text-[8px] sm:text-[10px] text-primary text-center mt-0.5 leading-none truncate w-full px-1">
+                {testimonial.program.split(' ')[0]}
               </p>
             </button>
           ))}

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { contactFormOptions as options } from '../../data/contactData';
+import GlobalButton from '../common/GlobalButton';
 
 // Variant for the entire left (Form) column
 const formColumnVariants = {
@@ -114,15 +115,13 @@ export const ContactForm = () => {
 
         {/* Submit Button - Added motion for interaction */}
         <div className="pt-4 sm:pt-5">
-          <motion.button
+          <GlobalButton 
+            text="Get Free Consultation"
+            icon={Send}
             type="submit"
-            className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg text-base"
-            whileHover={{ scale: 1.02, boxShadow: "0 10px 15px rgba(var(--primary-rgb), 0.2)" }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Send className="w-5 h-5" />
-            Get Free Consultation
-          </motion.button>
+            className="w-full lg"
+            showArrow={false}
+          />
         </div>
 
       </form>

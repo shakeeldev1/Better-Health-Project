@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, CheckCircle, HandHeart, ArrowRight, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import GlobalButton from '../common/GlobalButton';
 import { homeSwiperSlides as slides } from '../../data/homeData';
 
 // --- FRAMER MOTION VARIANTS ---
@@ -156,27 +156,19 @@ const HomeSwiper = () => {
                     variants={childVariant}
                     className="flex flex-wrap items-center gap-4 pt-2"
                   >
-                    <Link to={slides[currentSlide].to1}>
-                      <motion.button 
-                        whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.9)" }}
-                        whileTap={{ scale: 0.98 }}
-                        className="group flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-md text-primary rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-primary/20 text-xs sm:text-sm uppercase tracking-wider"
-                      >
-                        <span>{slides[currentSlide].button1}</span>
-                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </motion.button>
-                    </Link>
+                    <GlobalButton 
+                      text={slides[currentSlide].button1}
+                      link={slides[currentSlide].to1}
+                      className="uppercase tracking-wider"
+                    />
                     
-                    <Link to={slides[currentSlide].to2}>
-                      <motion.button 
-                        whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
-                        whileTap={{ scale: 0.98 }}
-                        className="group flex items-center gap-2 px-6 py-3 bg-white/5 text-white border border-white/20 rounded-xl font-bold backdrop-blur-md hover:bg-white/10 transition-all duration-300 text-xs sm:text-sm uppercase tracking-wider"
-                      >
-                        <BookOpen className="w-4 h-4" />
-                        <span>{slides[currentSlide].button2}</span>
-                      </motion.button>
-                    </Link>
+                    <GlobalButton 
+                      text={slides[currentSlide].button2}
+                      link={slides[currentSlide].to2}
+                      variant="outline"
+                      showArrow={false}
+                      className="uppercase tracking-wider"
+                    />
                   </motion.div>
 
                   {/* Features */}

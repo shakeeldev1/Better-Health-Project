@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigation, Copy } from 'lucide-react';
 import { motion } from 'framer-motion';
 import GlobalHeading from '../common/GlobalHeading';
+import GlobalButton from '../common/GlobalButton';
 import { locationData as data } from '../../data/contactData';
 
 // --- Framer Motion Variants ---
@@ -135,27 +136,26 @@ const LocationSection = () => {
             <div className="flex gap-3 flex-wrap justify-center">
               
               {/* Get Directions Button */}
-              <motion.button 
-                className="px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg shadow-md flex items-center gap-2"
-                variants={buttonVariants}
-                whileHover="hover"
-                // Adding custom tap animation for interaction feel
-                whileTap={{ scale: 0.95 }} 
-              >
-                <Navigation size={14} />
-                Get Directions
-              </motion.button>
+              <GlobalButton 
+                text="Get Directions"
+                icon={Navigation}
+                className="sm"
+                showArrow={false}
+                onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(data.address)}`, '_blank')}
+              />
               
               {/* Copy Address Button */}
-              <motion.button 
-                className="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-lg shadow-sm flex items-center gap-2"
-                variants={buttonVariants}
-                whileHover={{ scale: 1.05, boxShadow: "0 8px 20px -5px rgba(0, 0, 0, 0.05)" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Copy size={14} />
-                Copy Address
-              </motion.button>
+              <GlobalButton 
+                text="Copy Address"
+                icon={Copy}
+                variant="secondary"
+                className="sm"
+                showArrow={false}
+                onClick={() => {
+                  navigator.clipboard.writeText(data.address);
+                  alert('Address copied to clipboard!');
+                }}
+              />
 
             </div>
           </div>

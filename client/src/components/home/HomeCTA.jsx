@@ -4,13 +4,15 @@ import GlobalCTA from '../common/GlobalCTA';
 
 function HomeCTA() {
   return (
-    <GlobalCTA 
-      title={data.title}
-      highlightText={data.highlightText}
-      description={data.description}
-      buttonText={data.primaryButton.text}
-      buttonLink={data.primaryButton.link}
-    />
+    <div className="mt-6 sm:mt-8 lg:mt-10">
+      <GlobalCTA 
+        title={data.title}
+        highlightText={data.highlightText}
+        description={data.description}
+        buttonText={data.primaryButton.text}
+        buttonLink={data.primaryButton.link}
+      />
+    </div>
   );
 }
 

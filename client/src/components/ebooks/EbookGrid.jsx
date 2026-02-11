@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShoppingCart, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { ebooks, ebookGridData as data } from '../../data/ebookData';
 import GlobalHeading from '../common/GlobalHeading';
 
@@ -31,8 +31,14 @@ const EbookGrid = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen w-full bg-white py-16 px-4 relative overflow-hidden">
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl translate-y-1/2" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Title using GlobalHeading */}
         <GlobalHeading 
           badge={data.badge}
@@ -55,52 +61,57 @@ const EbookGrid = () => {
             {ebooks.map((ebook) => (
               <motion.div 
                 key={ebook.id} 
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-2 hover:border-primary/20 flex flex-col group h-[430px]"
+                className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary/20 flex flex-col group h-[450px] relative"
                 variants={cardVariants}
+                whileHover={{ y: -10 }}
               >
-                {/* Ebook Image */}
-                <div className="relative h-40 overflow-hidden">
+                {/* Ebook Image Container */}
+                <div className="relative h-48 overflow-hidden">
                   <img 
                     src={ebook.image}
                     alt={ebook.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute top-2.5 right-2.5">
-                    <span className="bg-primary text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-lg">
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Price Badge */}
+                  <div className="absolute top-4 right-4">
+                    <motion.div 
+                      whileHover={{ scale: 1.1 }}
+                      className="bg-white/90 backdrop-blur-md text-primary text-xs font-black px-4 py-2 rounded-2xl shadow-xl border border-white/50"
+                    >
                       {ebook.price}
-                    </span>
+                    </motion.div>
                   </div>
                 </div>
 
                 {/* Ebook Content */}
-                <div className="p-4 flex flex-col flex-grow">
-                  <h3 className="text-base font-bold text-gray-900 mb-1.5 group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                <div className="p-6 flex flex-col flex-grow relative bg-white">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300 line-clamp-1 pr-10">
                     {ebook.title}
                   </h3>
 
-                  <p className="text-[11px] leading-relaxed text-gray-600 mb-2.5 line-clamp-2">
+                  <p className="text-xs leading-relaxed text-gray-500 mb-4 line-clamp-2">
                     {ebook.description}
                   </p>
 
                   {/* Features/Who it's for */}
-                  <div className="space-y-1 mb-3 flex-grow">
+                  <div className="space-y-2 mb-6 flex-grow">
                     {ebook.whoItIsFor.slice(0, 3).map((item, index) => (
-                      <div key={index} className="flex items-start gap-1.5 text-[11px] text-gray-600">
-                        <CheckCircle2 className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="line-clamp-1">{item}</span>
+                      <div key={index} className="flex items-start gap-2 text-xs text-gray-600 group/item">
+                        <CheckCircle2 className="w-4 h-4 text-primary/40 group-hover/item:text-primary transition-colors duration-300 mt-0.5 flex-shrink-0" />
+                        <span className="line-clamp-1 group-hover/item:text-gray-900 transition-colors duration-300">{item}</span>
                       </div>
                     ))}
                   </div>
 
-                  {/* Action Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full bg-primary text-white py-2 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-dark transition-all duration-300 shadow-lg shadow-primary/20 text-xs"
-                  >
-                    <ShoppingCart size={14} />
-                    Buy Now
-                  </motion.button>
+                  {/* Info Badge */}
+                  <div className="mt-auto">
+                    <div className="inline-flex items-center gap-2.5 px-4 py-3 bg-gray-50 text-gray-400 rounded-2xl border border-gray-100 w-full justify-center group-hover:bg-primary/5 group-hover:text-primary group-hover:border-primary/20 transition-all duration-500 group-hover:shadow-inner">
+                      <span className="text-[10px] font-black uppercase tracking-[0.2em]">Instant Digital Access</span>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
