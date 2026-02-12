@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, Eye, Lock, Share2, Cookie, UserCheck, Mail } from "lucide-react";
 
@@ -130,12 +131,12 @@ const PrivacyPolicy = () => {
                   <p className="text-primary-light mb-6 text-sm">
                     If you have any questions about your data or this policy, our team is here to help.
                   </p>
-                  <a 
-                    href="mailto:hello@betterhealthproject.com" 
+                  <Link 
+                    to="/contact" 
                     className="block w-full bg-white text-primary font-bold py-4 rounded-2xl text-center hover:bg-gray-50 transition-colors shadow-lg"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </div>
                 {/* Decorative circle */}
                 <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />

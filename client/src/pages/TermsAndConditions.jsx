@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FileText, Activity, AlertCircle, User, CreditCard, RefreshCw, Scale, Edit3, HelpCircle } from "lucide-react";
 
@@ -142,12 +143,12 @@ const TermsAndConditions = () => {
             <p className="text-gray-600 mb-10 max-w-lg mx-auto">
               If any part of these terms is unclear, please reach out to our support team for a detailed explanation.
             </p>
-            <a 
-              href="mailto:hello@betterhealthproject.com"
+            <Link 
+              to="/contact"
               className="inline-flex items-center gap-2 bg-gray-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-black transition-all hover:scale-105 shadow-xl"
             >
               Email Support
-            </a>
+            </Link>
           </div>
         </div>
       </div>

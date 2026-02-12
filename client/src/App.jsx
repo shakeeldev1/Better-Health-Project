@@ -2,6 +2,7 @@ import './App.css'
 import Footer from './components/common/Footer'
 import Navbar from './components/common/Navbar'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { Toaster } from 'sonner';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import FamilyCoaching from './pages/FamilyCoaching';
@@ -13,6 +14,7 @@ import TermsAndConditions from './pages/TermsAndConditions';
 const MainLayout = () => {
   return (
     <>
+      <Toaster position="top-right" richColors />
       <Navbar />
       <Outlet />
       <Footer />

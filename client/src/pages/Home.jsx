@@ -19,10 +19,10 @@ const Home = () => {
       <HomeSwiper />
       <HomeAbout />
       <HomeExpect />
+      <HomeTransformations />
       <HomeIncluded />
       <HomeApp />
       <Timeline />
-      <HomeTransformations />
       <HomeCTA />
     </div>
   );
