@@ -42,16 +42,16 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 w-full z-50 pointer-events-none">
       {/* Background Gradient Overlay for Transparency */}
       <div 
-        className={`absolute inset-0 h-24 bg-gradient-to-b from-black/50 to-transparent transition-opacity duration-500 ${
-          isScrolled ? "opacity-0" : "opacity-100"
+        className={`absolute inset-0 h-24 transition-opacity duration-500 ${
+          isScrolled ? "opacity-0" : "sm:bg-gradient-to-b sm:from-black/50 sm:to-transparent lg:bg-gradient-to-b lg:from-black/50 lg:to-transparent opacity-100 sm:opacity-100 lg:opacity-100 md:bg-black/40 md:backdrop-blur-lg md:opacity-100"
         }`} 
       />
 
       <motion.nav
-        className={`w-full pointer-events-auto transition-all duration-500 py-2 ${
+        className={`w-full pointer-events-auto transition-all duration-500 py-2 relative z-[50] ${
           isScrolled 
             ? "bg-white/80 backdrop-blur-xl shadow-lg border-b border-gray-100" 
-            : "bg-transparent border-transparent"
+            : "bg-transparent border-transparent sm:bg-transparent lg:bg-transparent md:bg-black/30 md:backdrop-blur-lg"
         }`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -147,18 +147,19 @@ const Navbar = () => {
                 text="Contact Now"
                 link="/contact"
                 variant={isScrolled ? "primary" : "outline"}
-                className="py-2 px-5 text-sm rounded-full"
+                className="sm rounded-full"
                 showShine={!isScrolled}
+                showArrow={false}
               />
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`lg:hidden p-2.5 transition-all rounded-xl border ${
+              className={`lg:hidden p-2.5 transition-all rounded-xl border relative z-[51] ${
                 isScrolled 
                   ? "bg-white/50 hover:bg-white border-white/50" 
-                  : "bg-white/10 hover:bg-white/20 border-white/20"
+                  : "bg-black/40 hover:bg-black/50 border-white/30 backdrop-blur-sm"
               }`}
             >
               {menuOpen 
@@ -186,20 +187,25 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-[80%] max-w-sm bg-white/90 backdrop-blur-2xl p-8 shadow-2xl border-l border-gray-100 z-[60] lg:hidden pointer-events-auto overflow-hidden flex flex-col"
+              className="fixed top-0 right-0 w-[80%] max-w-sm bg-white/90 backdrop-blur-2xl p-8 shadow-2xl border-l border-gray-100 z-[60] lg:hidden pointer-events-auto flex flex-col rounded-l-3xl max-h-screen overflow-y-auto"
             >
-              <div className="flex justify-end mb-8">
+              <motion.div 
+                className="flex justify-start mb-8"
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
                 <button
                   onClick={() => setMenuOpen(false)}
-                  className="p-2.5 bg-gray-100 hover:bg-gray-200 transition-all rounded-xl border border-gray-200"
+                  className="p-2.5 bg-gray-100 hover:bg-gray-200 transition-all rounded-xl border border-gray-200 hover:scale-110"
                 >
                   <FaTimes size={20} className="text-gray-700" />
                 </button>
-              </div>
+              </motion.div>
 
-              <div className="relative z-10 space-y-4">
+              <div className="relative z-10 space-y-4 overflow-y-auto flex-1 pr-2">
                 <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-6 opacity-60 px-4">Menu</p>
-                {navItems.map(({ label, to }) => (
+                {navItems.filter(item => item.label !== 'Contact').map(({ label, to }) => (
                   <Link
                     key={label}
                     to={to}
@@ -215,6 +221,16 @@ const Navbar = () => {
                   </Link>
                 ))}
               </div>
+
+              {/* Contact Now Button for Mobile */}
+              <Link
+                to="/contact"
+                onClick={() => handleNavClick("/contact")}
+                className="flex items-center justify-between px-6 py-4 rounded-2xl text-lg font-bold transition-all border-2 border-primary text-primary hover:bg-primary/10 mt-4"
+              >
+                Contact Now
+                <FaArrowRight className="text-sm opacity-100" />
+              </Link>
               
               {/* Decorative background element for mobile menu */}
               <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-0" />

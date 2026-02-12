@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="space-y-4">
           <Link to="/" className="inline-block">
             <img
-              src="/bettet health project.png"
+              src="/favicon.png"
               alt="Better Health Project Logo"
               loading="lazy"
               className="h-20 w-auto object-contain"
