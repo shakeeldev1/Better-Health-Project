@@ -32,7 +32,6 @@ const GlobalCard1 = ({
         </>
       )}
 
-      {/* Icon Container */}
       <div className="relative z-10 flex justify-center mb-4">
         <div className={`rounded-full p-3 transition-colors duration-300 ${
           bgImage 
