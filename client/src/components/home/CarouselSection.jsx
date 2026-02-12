@@ -11,8 +11,6 @@ import 'swiper/css/navigation';
 const CarouselSection = ({ showHeader = true }) => {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
-  const [isPlaying] = useState(true);
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.realIndex);
@@ -108,7 +106,6 @@ const CarouselSection = ({ showHeader = true }) => {
               autoplay={{
                 delay: 2000,
                 disableOnInteraction: false,
-                pauseOnMouseEnter: true,
               }}
               keyboard={{ enabled: true }}
               modules={[EffectCube, Autoplay, Keyboard]}
@@ -124,15 +121,19 @@ const CarouselSection = ({ showHeader = true }) => {
                     />
 
                     {/* Gradient Overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/70 ${slide.gradient}`} />
+                    <div className={`absolute inset-0 bg-black/30 transition-opacity duration-500`} />
+                    <div className={`absolute inset-0 bg-gradient-to-t from-black/20 via-black/20 to-black/20`} />
 
                     {/* Content */}
-                    <div className="relative h-full flex flex-col items-center justify-center px-6 py-8 text-center">
-                      {/* Icon */}
-                      <div className="">
-                        <div className={`inline-flex p-5 rounded-2xl ${slide.bgColor}/20 border border-white/20 backdrop-blur-sm`}>
-                          {slide.icon}
-                        </div>
+                    <div className="relative h-full flex flex-col items-center justify-end px-6 py-12 text-center">
+                      {/* Title & Description */}
+                      <div className="space-y-3 relative z-10 w-full">
+                        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                          {slide.title}
+                        </h3>
+                        <p className="text-sm md:text-base text-white font-medium leading-relaxed max-w-[280px] mx-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                          {slide.description}
+                        </p>
                       </div>
 
                       {/* Corner Decorations */}

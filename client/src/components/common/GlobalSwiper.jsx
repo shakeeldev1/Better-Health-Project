@@ -142,7 +142,7 @@ const GlobalSwiper = ({ slides, buttonStyle = 'default', showIcon = false }) => 
                                                 className="text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto"
                                                 variants={itemVariants}
                                             >
-                                                {slide.subtitle}
+                                                {slide.subtitle || slide.description}
                                             </motion.p>
 
                                             {/* Buttons (Animated Item 4 - Grouped) */}

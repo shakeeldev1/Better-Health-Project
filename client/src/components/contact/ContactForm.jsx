@@ -1,8 +1,11 @@
 // ContactForm.jsx
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Send } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../../config/emailConfig';
 import { contactFormOptions as options } from '../../data/contactData';
 import GlobalButton from '../common/GlobalButton';
 
@@ -21,6 +24,8 @@ const formColumnVariants = {
 };
 
 export const ContactForm = () => {
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -29,18 +34,41 @@ export const ContactForm = () => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // In a real app, you would send data to an API here
-    alert('Thank you! We will contact you soon.');
-    setFormData({
-      fullName: '',
-      email: '',
-      phone: '',
-      program: '',
-      message: ''
-    });
+    
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    const loadingToast = toast.loading('Sending your message...');
+
+    try {
+      await emailjs.sendForm(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        form.current,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      toast.success('Thank you! Your message has been sent successfully.', {
+        id: loadingToast,
+      });
+
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        program: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast.error('Failed to send message. Please try again later or contact us directly.', {
+        id: loadingToast,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -65,7 +93,7 @@ export const ContactForm = () => {
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+      <form ref={form} onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
         
         {/* Inputs */}
         <div>
@@ -116,11 +144,12 @@ export const ContactForm = () => {
         {/* Submit Button - Added motion for interaction */}
         <div className="pt-4 sm:pt-5">
           <GlobalButton 
-            text="Get Free Consultation"
+            text={isSubmitting ? "Sending..." : "Get Free Consultation"}
             icon={Send}
             type="submit"
             className="w-full lg"
             showArrow={false}
+            disabled={isSubmitting}
           />
         </div>
 
