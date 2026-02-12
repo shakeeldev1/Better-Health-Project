@@ -33,9 +33,9 @@ const GlobalButton = ({
   };
 
   const sizes = {
-    sm: "py-2 px-4 text-xs",
-    md: "py-3 px-8 text-sm",
-    lg: "py-4 px-10 text-base"
+    sm: "py-1.5 px-3.5 text-xs",
+    md: "py-2.5 px-6 text-sm",
+    lg: "py-3.5 px-8 text-base"
   };
 
   const currentSize = typeof sizes[className] !== 'undefined' ? sizes[className] : sizes.md;
@@ -77,7 +77,7 @@ const GlobalButton = ({
     return (
       <Link 
         to={link}
-        className={`${baseStyles} ${variants[variant]} ${isActive ? activeStyles[variant] : ''} ${currentSize} rounded-lg ${className}`}
+        className={`${baseStyles} ${isActive ? activeStyles[variant] : variants[variant]} ${currentSize} rounded-lg ${className}`}
       >
         {content}
       </Link>
@@ -88,7 +88,7 @@ const GlobalButton = ({
     <button 
       type={type}
       onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${isActive ? activeStyles[variant] : ''} ${currentSize} rounded-lg ${className}`}
+      className={`${baseStyles} ${isActive ? activeStyles[variant] : variants[variant]} ${currentSize} rounded-lg ${className}`}
     >
       {content}
     </button>

@@ -19,22 +19,24 @@ const FAQAccordion = () => {
   const faqData = {
     general: [
       { id: 1, ...faqs[0] },
-      { id: 2, ...faqs[1] },
-      { id: 6, ...faqs[5] },
-      { id: 7, ...faqs[6] },
-      { id: 11, ...faqs[10] },
+      { id: 2, ...faqs[5] },
+      { id: 3, ...faqs[10] },
     ],
     coaching: [
-      { id: 3, ...faqs[2] },
-      { id: 4, ...faqs[3] },
-      { id: 8, ...faqs[7] },
-      { id: 9, ...faqs[8] },
+      { id: 4, ...faqs[2] },
+      { id: 5, ...faqs[3] },
+      { id: 6, ...faqs[6] },
+      { id: 7, ...faqs[7] },
     ],
     family: [
-      { id: 5, ...faqs[4] },
+      { id: 8, ...faqs[1] },
+      { id: 9, ...faqs[4] },
+      { id: 10, ...faqs[8] },
     ],
     app: [
-      { id: 10, ...faqs[9] },
+      { id: 11, ...faqs[9] },
+      { id: 12, ...faqs[7] },
+      { id: 13, ...faqs[8] },
     ],
   };
 
@@ -86,7 +88,7 @@ const FAQAccordion = () => {
                     icon={Icon}
                     isActive={isActive}
                     variant="ghost"
-                    className="rounded-xl px-6 py-3"
+                    className="rounded-xl"
                     showArrow={false}
                     onClick={() => {
                       setActiveCategory(category.id);
@@ -122,7 +124,7 @@ const FAQAccordion = () => {
                   <div
                     key={faq.id}
                     className={`border-b border-gray-100 last:border-b-0 transition-all duration-300 ${
-                      openFAQ === faq.id ? 'bg-primary-muted/30' : 'bg-white hover:bg-gray-50'
+                      openFAQ === faq.id ? 'bg-primary-muted/50' : 'bg-white hover:bg-gray-50'
                     }`}
                   >
                     <button
@@ -130,7 +132,7 @@ const FAQAccordion = () => {
                       className="w-full px-6 md:px-10 py-6 flex items-center justify-between text-left transition-all duration-300"
                     >
                       <span className={`font-bold text-base md:text-lg pr-4 transition-colors duration-300 ${
-                        openFAQ === faq.id ? 'text-primary' : 'text-gray-800'
+                        openFAQ === faq.id ? 'text-gray-900' : 'text-gray-700'
                       }`}>
                         {faq.question}
                       </span>
@@ -153,7 +155,7 @@ const FAQAccordion = () => {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.3, ease: 'easeInOut' }}
                         >
-                          <div className="px-6 md:px-10 pb-8 text-gray-600 text-sm md:text-base leading-relaxed">
+                          <div className="px-6 md:px-10 pb-8 text-gray-700 text-sm md:text-base leading-relaxed">
                             {faq.answer}
                           </div>
                         </motion.div>

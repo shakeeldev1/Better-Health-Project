@@ -154,13 +154,13 @@ const GlobalSwiper = ({ slides, buttonStyle = 'default', showIcon = false }) => 
                                                     text={slide.button1}
                                                     link={slide.to1}
                                                     variant={buttonStyle === 'gradient' ? 'primary' : 'secondary'}
-                                                    className="lg"
+                                                    className="md"
                                                 />
                                                 <GlobalButton 
                                                     text={slide.button2}
                                                     link={slide.to2}
                                                     variant="outline"
-                                                    className="lg"
+                                                    className="md"
                                                     showArrow={false}
                                                 />
                                             </motion.div>
@@ -213,13 +213,27 @@ const GlobalSwiper = ({ slides, buttonStyle = 'default', showIcon = false }) => 
                     left: 20px !important;
                 }
 
+                .swiper-pagination {
+                    bottom: 40px !important;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 6px;
+                    height: 3px;
+                }
+
                 .swiper-pagination-bullet {
                     width: 12px;
-                    height: 12px;
+                    height: 3px;
                     background: rgba(255, 255, 255, 0.3);
                     opacity: 1;
                     transition: all 0.3s ease;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border: none;
+                    border-radius: 2px;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    flex-shrink: 0;
                 }
 
                 .swiper-pagination-bullet-active {
@@ -229,20 +243,15 @@ const GlobalSwiper = ({ slides, buttonStyle = 'default', showIcon = false }) => 
                             ? 'background: #ffffff;'
                             : 'background: var(--color-primary);'
                     }
-                    width: 30px;
-                    border-radius: 10px;
-                    transform: scale(1);
-                    border: none;
-                    box-shadow: 0 0 15px ${buttonStyle === 'gradient'
-                        ? 'rgba(var(--primary-rgb), 0.5)'
+                    width: 36px;
+                    opacity: 1;
+                    box-shadow: 0 0 12px ${buttonStyle === 'gradient'
+                        ? 'rgba(var(--primary-rgb), 0.6)'
                         : buttonStyle === 'white'
-                            ? 'rgba(255, 255, 255, 0.5)'
-                            : 'rgba(var(--primary-rgb), 0.5)'
+                            ? 'rgba(255, 255, 255, 0.6)'
+                            : 'rgba(var(--primary-rgb), 0.6)'
                     };
-                }
-
-                .swiper-pagination {
-                    bottom: 40px !important;
+                    transition: all 0.3s ease;
                 }
             `}} />
         </div>

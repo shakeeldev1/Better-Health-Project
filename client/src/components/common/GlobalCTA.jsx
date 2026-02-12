@@ -70,14 +70,8 @@ const GlobalCTA = ({
             className="text-xl md:text-2xl lg:text-[1.75rem] font-bold text-gray-900 leading-tight"
             variants={itemVariants}
           >
-            {title} <span className="text-primary relative inline-block">
+            {title} <span className="text-primary">
               {highlightText}
-              <motion.div 
-                initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-                className="absolute bottom-1 left-0 h-1 bg-primary/10 -z-10"
-              />
             </span>
           </motion.h2>
 

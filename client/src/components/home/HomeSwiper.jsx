@@ -54,7 +54,7 @@ const HomeSwiper = () => {
   }, [page]);
 
   useEffect(() => {
-    const timer = setInterval(() => paginate(1), 5000); // 5s is better for UX than 2s
+    const timer = setInterval(() => paginate(1), 2000); // 2s autoplay
     return () => clearInterval(timer);
   }, [paginate]);
 
@@ -106,8 +106,8 @@ const HomeSwiper = () => {
                 </motion.p>
 
                 <motion.div variants={contentVariants} className="flex flex-wrap gap-4">
-                  <GlobalButton text={slides[currentSlide].button1} link={slides[currentSlide].to1} />
-                  <GlobalButton text={slides[currentSlide].button2} link={slides[currentSlide].to2} variant="outline" />
+                  <GlobalButton text={slides[currentSlide].button1} link={slides[currentSlide].to1} className="px-6" />
+                  <GlobalButton text={slides[currentSlide].button2} link={slides[currentSlide].to2} variant="outline" className="px-6" />
                 </motion.div>
               </motion.div>
 
