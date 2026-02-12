@@ -19,7 +19,9 @@ export const contactSwiperSlides = [
     description: "Whether you have questions about family coaching, e-books, or starting your own journey, we're here to provide clarity.",
     bgImage: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=75&fm=webp",
     button1: "Get in Touch",
-    button2: "Our Services"
+    to1: "/contact",
+    button2: "Our Services",
+    to2: "/family-coaching"
   },
   {
     id: 2,
@@ -34,7 +36,9 @@ export const contactSwiperSlides = [
     description: "Ready to take the first step? Book a free 15-minute consultation to discuss your goals and how we can help you build health that lasts.",
     bgImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     button1: "Book Now",
-    button2: "FAQs"
+    to1: "/contact",
+    button2: "FAQs",
+    to2: "/faq"
   },
   {
     id: 3,
@@ -49,7 +53,9 @@ export const contactSwiperSlides = [
     description: "Connect with like-minded individuals and families on a mission to improve their health sustainably.",
     bgImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     button1: "Join Now",
-    button2: "Our Story"
+    to1: "/contact",
+    button2: "Our Story",
+    to2: "/"
   },
   {
     id: 4,
@@ -64,7 +70,9 @@ export const contactSwiperSlides = [
     description: "Get access to evidence-based strategies and professional support tailored to your unique lifestyle and goals.",
     bgImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     button1: "Meet the Coach",
-    button2: "Success Stories"
+    to1: "/contact",
+    button2: "Success Stories",
+    to2: "/#transformations"
   }
 ];
 

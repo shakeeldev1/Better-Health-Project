@@ -57,9 +57,11 @@ export const ebookSwiperSlides = [
     ),
     title: "Simple. Actionable. Practical.",
     subtitle: "Our e-books are designed to give you clarity, structure, and tools you can use immediately. No fluff. No extreme rules. Just practical guidance.",
-    bgImage: 'https://media.istockphoto.com/id/2162169941/photo/bookstore.webp?a=1&b=1&s=612x612&w=0&k=20&c=WNj3n_G7IsFUgsh0tnS0-NHVL8JbJyqtiZFhpdq6ch0=',
+    bgImage: '/ebook.png',
     button1: "View Library",
-    button2: "Learn More"
+    to1: "/ebooks",
+    button2: "Learn More",
+    to2: "/faq"
   },
   {
     id: 2,
@@ -71,9 +73,11 @@ export const ebookSwiperSlides = [
     ),
     title: "Clarity That Fits Real Life",
     subtitle: "Cut through the noise with step-by-step guides that focus on the fundamentals of sustainable health and habits.",
-    bgImage: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: '/ebook1.png',
     button1: "Buy Now",
-    button2: "Our Methods"
+    to1: "/ebooks",
+    button2: "Our Methods",
+    to2: "/contact"
   },
   {
     id: 3,
@@ -85,9 +89,11 @@ export const ebookSwiperSlides = [
     ),
     title: "Strategies for Long-Term Success",
     subtitle: "Learn how to set systems that work for your schedule. Our guides help you build consistency without the burnout.",
-    bgImage: 'https://media.istockphoto.com/id/1389876555/photo/adult-students-studying-together-in-library.webp?a=1&b=1&s=612x612&w=0&k=20&c=g0K5t0WMujllQV-VD15CoZEpWzINCoX0SMIfl6cSAu8=',
+    bgImage: 'https://images.unsplash.com/photo-1609895720459-394a6a8c99ed?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWJvb2t8ZW58MHx8MHx8fDA%3D',
     button1: "Explore Guides",
-    button2: "See Results"
+    to1: "/ebooks",
+    button2: "See Results",
+    to2: "/contact"
   },
   {
     id: 4,
@@ -101,7 +107,9 @@ export const ebookSwiperSlides = [
     subtitle: "Understand the 'why' behind your habits. We provide the science-backed education you need to make informed health decisions.",
     bgImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Start Reading",
-    button2: "Contact Us"
+    to1: "/ebooks",
+    button2: "Contact Us",
+    to2: "/contact"
   }
 ];
 

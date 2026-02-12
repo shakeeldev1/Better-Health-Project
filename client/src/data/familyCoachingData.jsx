@@ -19,7 +19,9 @@ export const familySwiperSlides = [
     subtitle: "Personalised health support for the entire household. Everyone moves forward with clarity and structure.",
     bgImage: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Join Family Coaching",
-    button2: "Enquire Now"
+    to1: "/contact",
+    button2: "Enquire Now",
+    to2: "/contact"
   },
   {
     id: 2,
@@ -33,7 +35,9 @@ export const familySwiperSlides = [
     subtitle: "No extreme rules or separate plans. Just a practical framework your family can actually stick to.",
     bgImage: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Explore Programs",
-    button2: "Learn More"
+    to1: "/contact",
+    button2: "Learn More",
+    to2: "/contact"
   },
   {
     id: 3,
@@ -47,7 +51,9 @@ export const familySwiperSlides = [
     subtitle: "Nutrition and routines that work for all ages, from parents to children, under one plan.",
     bgImage: 'https://images.unsplash.com/photo-1484981138541-3d074aa97716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Start Journey",
-    button2: "Our Methods"
+    to1: "/contact",
+    button2: "Our Methods",
+    to2: "/contact"
   },
   {
     id: 4,
@@ -61,7 +67,9 @@ export const familySwiperSlides = [
     subtitle: "Set your children up for success by creating structure and understanding around health today.",
     bgImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Join Us",
-    button2: "Read Stories"
+    to1: "/contact",
+    button2: "Read Stories",
+    to2: "/contact"
   }
 ];
 

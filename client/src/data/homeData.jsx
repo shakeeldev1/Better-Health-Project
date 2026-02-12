@@ -5,7 +5,7 @@ export const homeSwiperSlides = [
   {
     badge: 'Build Better Health',
     title: 'Health That Fits Your Real Life',
-    description: "Expert coaching and sustainable wellness practices designed for busy individuals and families.",
+    subtitle: "Expert coaching and sustainable wellness practices designed for busy individuals and families.",
     button1: 'Start Coaching',
     to1: '/contact',
     button2: 'View E Books',
@@ -15,12 +15,12 @@ export const homeSwiperSlides = [
       { icon: CheckCircle, text: 'Sustainable Habits' },
       { icon: CheckCircle, text: 'Real Results' }
     ],
-    image: "https://images.unsplash.com/photo-1608138278545-366680accc66?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    bgImage: "/better health_1.png",
   },
   {
     badge: 'Family Wellness',
     title: 'Stronger Families, Healthier Lives',
-    description: 'Align your household with practical nutrition and movement strategies that work for everyone.',
+    subtitle: 'Align your household with practical nutrition and movement strategies that work for everyone.',
     button1: 'Family Coaching',
     to1: '/family-coaching',
     button2: 'Our Approach',
@@ -30,12 +30,12 @@ export const homeSwiperSlides = [
       { icon: CheckCircle, text: 'Practical Nutrition' },
       { icon: CheckCircle, text: 'Shared Success' }
     ],
-    image: "https://plus.unsplash.com/premium_photo-1661699540413-2390093cfb29?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    bgImage: "https://images.unsplash.com/photo-1608138278561-4b1ade407411?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YWN0aXZlJTIwbGlmZXN0eWxlfGVufDB8fDB8fHww",
   },
   {
     badge: 'Digital Tools',
     title: 'Your Progress, In Your Pocket',
-    description: 'Track your training, nutrition, and habits with our dedicated app designed for long-term consistency.',
+    subtitle: 'Track your training, nutrition, and habits with our dedicated app designed for long-term consistency.',
     button1: 'Download App',
     to1: '/contact',
     button2: 'Learn More',
@@ -45,7 +45,22 @@ export const homeSwiperSlides = [
       { icon: CheckCircle, text: 'Nutrition Logs' },
       { icon: CheckCircle, text: 'Training Plans' }
     ],
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop",
+    bgImage: "/better_health.jpg",
+  },
+  {
+    badge: 'Coaching Support',
+    title: 'Expert Support, Every Step',
+    subtitle: 'Access professional guidance and evidence-based strategies tailored to your unique lifestyle and goals.',
+    button1: 'Meet the Coach',
+    to1: '/contact',
+    button2: 'Success Stories',
+    to2: '/#transformations',
+    features: [
+      { icon: CheckCircle, text: 'Direct Support' },
+      { icon: CheckCircle, text: 'Expert Guidance' },
+      { icon: CheckCircle, text: 'Proven Results' }
+    ],
+    bgImage: "https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWN0aXZlJTIwbGlmZXN0eWxlfGVufDB8fDB8fHww",
   }
 ];
 
@@ -161,7 +176,7 @@ export const homeTransformations = [
     name: 'Sarah M.',
     program: 'Nutrition Coaching',
     location: 'London, UK',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://media.istockphoto.com/id/514518416/photo/tracking-her-progress.jpg?s=612x612&w=0&k=20&c=brCYthdPZk-A9LN8NNbfzJFwg5iGKPF-CKI6obS86zY=',
     quote: "Better Health Project completely changed my approach to nutrition. I no longer feel overwhelmed by complex diets. The support is incredible!",
     programs: 'Nutrition Coaching',
     status: "Achieved",
@@ -172,31 +187,32 @@ export const homeTransformations = [
     name: ' Thompson',
     program: 'Family Wellness',
     location: 'Manchester, UK',
-    image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://www.thebodytransformationacademy.com/uploads/7/4/4/9/74499561/img-0252_orig.jpg',
     quote: "Family coaching helped us align our health goals. We now enjoy active weekends together and eat much better as a household. It's been a game changer.",
     programs: 'Family Wellness',
     status: "Achieved",
     rating: 5
   },
-  {
-    id: 3,
-    name: 'James L.',
-    program: 'Personal Training',
-    location: 'Birmingham, UK',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    quote: "The structured training plans and app tracking kept me consistent for the first time in years. Highly recommend for anyone serious about fitness!",
-    programs: 'Personal Training',
-    status: "Achieved",
-    rating: 5
-  },
+ 
   {
     id: 4,
     name: 'Emma R.',
     program: 'Habit Coaching',
     location: 'Bristol, UK',
-    image: 'https://randomuser.me/api/portraits/women/68.jpg',
+    image: 'https://www.shutterstock.com/image-photo/woman-posing-before-after-weight-600nw-1866911131.jpg',
     quote: "The habit coaching made the WIC application process so easy and stress-free! I feel more in control of my daily routine than ever before.",
     programs: 'Habit Coaching',
+    status: "Achieved",
+    rating: 5
+  },
+  {
+    id: 5,
+    name: 'Michael K.',
+    program: 'Strength & Conditioning',
+    location: 'Leeds, UK',
+    image: 'https://media.istockphoto.com/id/521790411/photo/proud-of-all-my-hard-work.jpg?s=612x612&w=0&k=20&c=OTY4M1f50suFYBuykM78RCnmw726hqCGB1NyuKzf4dU=',
+    quote: "The program provided the discipline and structure I needed. Seeing the physical results every week kept me motivated to push harder.",
+    programs: 'Strength & Conditioning',
     status: "Achieved",
     rating: 5
   }
@@ -257,7 +273,7 @@ export const carouselSlides = [
     id: 1,
     title: "Expert Consultation",
     description: "Deep dive into your goals and lifestyle to build a solid foundation.",
-    image: "https://images.unsplash.com/photo-1608138278545-366680accc66?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/better health_1.png",
     icon: <MessageCircle className="w-12 h-12 md:w-14 md:h-14 text-white" />,
     gradient: "from-blue-500/30 to-purple-500/30",
     bgColor: "bg-blue-500"
@@ -275,7 +291,7 @@ export const carouselSlides = [
     id: 3,
     title: "Digital Tools",
     description: "Daily habit tracking and direct support via our dedicated app.",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop",
+    image: "/better_health.jpg",
     icon: <RefreshCw className="w-12 h-12 md:w-14 md:h-14 text-white" />,
     gradient: "from-amber-500/30 to-orange-500/30",
     bgColor: "bg-amber-500"

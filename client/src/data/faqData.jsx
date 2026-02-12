@@ -61,7 +61,9 @@ export const faqSwiperSlides = [
     subtitle: "We know starting something new comes with questions. Below you’ll find clear, honest answers to the most common ones we receive.",
     bgImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     button1: "Common Questions",
-    button2: "Get In Touch"
+    to1: "/faq",
+    button2: "Get In Touch",
+    to2: "/contact"
   },
   
   {
@@ -76,7 +78,9 @@ export const faqSwiperSlides = [
     subtitle: "No extreme rules or short-term fixes. We focus on education and systems that adapt to your lifestyle, ensuring long-term success.",
     bgImage: 'https://images.unsplash.com/photo-1557425955-df376b5903c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Our Approach",
-    button2: "Read FAQs"
+    to1: "/contact",
+    button2: "Read FAQs",
+    to2: "/faq"
   },
   {
     id: 3,
@@ -90,7 +94,9 @@ export const faqSwiperSlides = [
     subtitle: "One clear, practical approach for the entire household. We help families align routines so everyone moves toward better health.",
     bgImage: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Family Coaching",
-    button2: "Learn More"
+    to1: "/family-coaching",
+    button2: "Learn More",
+    to2: "/contact"
   },
   {
     id: 4,
@@ -104,7 +110,9 @@ export const faqSwiperSlides = [
     subtitle: "If you don’t see what you’re looking for, our team is ready to help you find the right path for your health journey.",
     bgImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
     button1: "Contact Us",
-    button2: "Join Now"
+    to1: "/contact",
+    button2: "Join Now",
+    to2: "/contact"
   }
 ];
 
