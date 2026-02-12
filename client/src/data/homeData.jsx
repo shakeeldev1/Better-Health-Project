@@ -92,7 +92,7 @@ export const homeExpectations = [
   {
     icon: <RefreshCw className="text-primary" />,
     title: "Support That Adapts",
-    description: "Your plan evolves as your life does — no rigid rules, no unnecessary stress."
+    description: "Your plan evolves as your life does no rigid rules, no unnecessary stress."
   },
   {
     icon: <BarChart3 className="text-primary" />,
@@ -150,7 +150,7 @@ export const homeAboutData = {
   highlightText: "Complexity",
   paragraphs: [
     "Better Health Project is built on a simple belief: health should work with your life, not against it.",
-    "We focus on creating clear systems around nutrition, movement, and daily habits — so progress feels achievable and sustainable.",
+    "We focus on creating clear systems around nutrition, movement, and daily habits so progress feels achievable and sustainable.",
     "No gimmicks. No pressure. Just a practical approach you can maintain long-term."
   ],
   points: [
@@ -166,7 +166,7 @@ export const homeAppData = {
   badge: "The App",
   title: "Your Coaching,",
   highlightText: "Simplified",
-  description: "The Better Health Project app keeps everything in one place — so daily habits stay simple and consistent. Track progress, follow your plan, and stay connected with your coach, all from your phone.",
+  description: "The Better Health Project app keeps everything in one place so daily habits stay simple and consistent. Track progress, follow your plan, and stay connected with your coach, all from your phone.",
   image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
 };
 
@@ -222,7 +222,7 @@ export const homeCTAData = {
   badge: "Next Steps",
   title: "Ready to Start",
   highlightText: "Your Journey?",
-  description: "Whether you're looking for 1:1 coaching, family health support, or practical guides, we have everything you need to build health that lasts.",
+  description: "Whether you're looking for coaching, family health support, or practical guides, we have everything you need to build health that lasts.",
   primaryButton: {
     text: "Join Better Health Project",
     link: "/contact"

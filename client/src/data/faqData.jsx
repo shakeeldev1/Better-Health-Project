@@ -4,7 +4,7 @@ import { HelpCircle, Shield, Users, MessageCircle } from 'lucide-react';
 export const faqs = [
   {
     question: "What is Better Health Project?",
-    answer: "Better Health Project is a personalised coaching platform designed to help individuals and families build sustainable health habits through nutrition, training, education, and ongoing support. This isn’t a one-size-fits-all program — everything is tailored to real life."
+    answer: "Better Health Project is a personalised coaching platform designed to help individuals and families build sustainable health habits through nutrition, training, education, and ongoing support. This isn't a one-size-fits-all program everything is tailored to real life."
   },
   {
     question: "Who is this coaching for?",
@@ -20,7 +20,7 @@ export const faqs = [
   },
   {
     question: "How does family coaching work?",
-    answer: "Family coaching supports the entire household with one clear, practical approach. We help families align nutrition, routines, and movement so everyone is working toward better health together — without separate plans or added stress."
+    answer: "Family coaching supports the entire household with one clear, practical approach. We help families align nutrition, routines, and movement so everyone is working toward better health together without separate plans or added stress."
   },
   {
     question: "How is this different from other programs?",
@@ -59,7 +59,7 @@ export const faqSwiperSlides = [
     ),
     title: "Everything You Need to Know",
     subtitle: "We know starting something new comes with questions. Below you’ll find clear, honest answers to the most common ones we receive.",
-    bgImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    bgImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1600&auto=format&fit=crop&q=75',
     button1: "Common Questions",
     to1: "/faq",
     button2: "Get In Touch",
@@ -76,7 +76,7 @@ export const faqSwiperSlides = [
     ),
     title: "Built for Your Real Life",
     subtitle: "No extreme rules or short-term fixes. We focus on education and systems that adapt to your lifestyle, ensuring long-term success.",
-    bgImage: 'https://images.unsplash.com/photo-1557425955-df376b5903c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: 'https://images.unsplash.com/photo-1557425955-df376b5903c8?w=1600&auto=format&fit=crop&q=75',
     button1: "Our Approach",
     to1: "/contact",
     button2: "Read FAQs",
@@ -92,7 +92,7 @@ export const faqSwiperSlides = [
     ),
     title: "Healthy Families, Together",
     subtitle: "One clear, practical approach for the entire household. We help families align routines so everyone moves toward better health.",
-    bgImage: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1600&auto=format&fit=crop&q=75',
     button1: "Family Coaching",
     to1: "/family-coaching",
     button2: "Learn More",

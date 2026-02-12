@@ -6,7 +6,7 @@ export const ebooks = [
     id: 1,
     title: "The Foundations of Better Health",
     price: "£19",
-    description: "A simple, step-by-step guide to building sustainable health habits. This e-book focuses on the fundamentals that create long-term results — without overwhelm.",
+    description: "A simple, step-by-step guide to building sustainable health habits. This e-book focuses on the fundamentals that create long-term results without overwhelm.",
     details: "You’ll learn how to structure nutrition, movement, and daily routines in a way that actually lasts.",
     whoItIsFor: [
       "Anyone starting their health journey",
@@ -21,7 +21,7 @@ export const ebooks = [
     title: "Healthy Habits for Busy Families",
     price: "£24",
     description: "A practical guide for families who want better health without added stress. This e-book shows you how to create routines, meals, and habits that work for the entire household.",
-    details: "Designed for real family life — not perfect schedules.",
+    details: "Designed for real family life not perfect schedules.",
     whoItIsFor: [
       "Parents with busy schedules",
       "Families struggling with consistency",
@@ -89,7 +89,7 @@ export const ebookSwiperSlides = [
     ),
     title: "Strategies for Long-Term Success",
     subtitle: "Learn how to set systems that work for your schedule. Our guides help you build consistency without the burnout.",
-    bgImage: 'https://images.unsplash.com/photo-1609895720459-394a6a8c99ed?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWJvb2t8ZW58MHx8MHx8fDA%3D',
+    bgImage: 'https://images.unsplash.com/photo-1609895720459-394a6a8c99ed?w=1600&auto=format&fit=crop&q=75',
     button1: "Explore Guides",
     to1: "/ebooks",
     button2: "See Results",
@@ -99,14 +99,14 @@ export const ebookSwiperSlides = [
     id: 4,
     badge: (
       <span className="flex items-center gap-1">
-        <ShieldCheck size={14} />
-        Expert Knowledge
+        <Layout size={14} />
+        Comprehensive
       </span>
     ),
-    title: "Education Over Restriction",
-    subtitle: "Understand the 'why' behind your habits. We provide the science-backed education you need to make informed health decisions.",
-    bgImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
-    button1: "Start Reading",
+    title: "All the Tools You Need",
+    subtitle: "From nutrition fundamentals to family routines, our e-book collection covers every aspect of building a better health project.",
+    bgImage: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&auto=format&fit=crop&q=75',
+    button1: "Get the Bundle",
     to1: "/ebooks",
     button2: "Contact Us",
     to2: "/contact"
@@ -153,7 +153,7 @@ export const ebookHowItWorksSteps = [
   {
     icon: <BookOpen className="text-primary" size={32} />,
     title: "Read at your own pace",
-    description: "Access your e-book on any device — phone, tablet, or computer — whenever you need it."
+    description: "Access your e-book on any device phone, tablet, or computer whenever you need it."
   },
   {
     icon: <PenTool className="text-primary" size={32} />,

@@ -17,7 +17,7 @@ export const familySwiperSlides = [
     ),
     title: "Healthy Families",
     subtitle: "Personalised health support for the entire household. Everyone moves forward with clarity and structure.",
-    bgImage: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: 'https://images.unsplash.com/photo-1714646442265-9cec35271c7a?w=1600&auto=format&fit=crop&q=75',
     button1: "Join Family Coaching",
     to1: "/contact",
     button2: "Enquire Now",
@@ -33,7 +33,7 @@ export const familySwiperSlides = [
     ),
     title: "Real Life Health",
     subtitle: "No extreme rules or separate plans. Just a practical framework your family can actually stick to.",
-    bgImage: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: 'https://images.unsplash.com/photo-1714646442265-d60970b470e0?w=1600&auto=format&fit=crop&q=75',
     button1: "Explore Programs",
     to1: "/contact",
     button2: "Learn More",
@@ -49,7 +49,7 @@ export const familySwiperSlides = [
     ),
     title: "Unified Approach",
     subtitle: "Nutrition and routines that work for all ages, from parents to children, under one plan.",
-    bgImage: 'https://images.unsplash.com/photo-1484981138541-3d074aa97716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: 'https://images.unsplash.com/photo-1714646442257-70fbebe63ee2?w=1600&auto=format&fit=crop&q=75',
     button1: "Start Journey",
     to1: "/contact",
     button2: "Our Methods",
@@ -65,7 +65,7 @@ export const familySwiperSlides = [
     ),
     title: "Early Habits",
     subtitle: "Set your children up for success by creating structure and understanding around health today.",
-    bgImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp',
+    bgImage: 'https://plus.unsplash.com/premium_photo-1763576566296-957fe9c1023a?w=1600&auto=format&fit=crop&q=75',
     button1: "Join Us",
     to1: "/contact",
     button2: "Read Stories",
@@ -77,7 +77,7 @@ export const familyHowItWorksSteps = [
   {
     number: "01",
     title: "Family Assessment",
-    description: "We take time to understand your household — routines, schedules, preferences, and goals."
+    description: "We take time to understand your household routines, schedules, preferences, and goals."
   },
   {
     number: "02",
@@ -113,7 +113,7 @@ export const familyScenarios = [
     icon: <Target className="text-primary" />,
     title: "Different Goals",
     description: "Align individual targets like fat loss or energy under one practical family plan.",
-    bgImage: 'https://images.unsplash.com/photo-1484981138541-3d074aa97716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp'
+    bgImage: 'https://plus.unsplash.com/premium_photo-1664472736816-21b119ff343c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D'
   },
   {
     icon: <Zap className="text-primary" />,
@@ -158,7 +158,7 @@ export const familyWhoForData = {
   title: "Who Is This",
   highlightText: "For?",
   description: "Our family coaching is designed for households that want to prioritize health together.",
-  image: "https://images.unsplash.com/photo-1484981138541-3d074aa97716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp"
+  image: "https://plus.unsplash.com/premium_photo-1723863614145-cc14b2bca0c8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D"
 };
 
 export const familyWhyDifferentData = {
