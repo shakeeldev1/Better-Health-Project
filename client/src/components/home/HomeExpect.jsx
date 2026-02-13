@@ -3,9 +3,11 @@ import { motion } from 'framer-motion';
 import GlobalHeading from '../common/GlobalHeading';
 import GlobalCard2 from '../common/GlobalCard2';
 import { homeExpectations as expectations, homeExpectData as data } from '../../data/homeData';
+import FatLossSection from './FatLossSection';
 
 const HomeExpect = () => {
   return (
+    <>
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -62,6 +64,8 @@ const HomeExpect = () => {
         </div>
       </div>
     </section>
+    <FatLossSection/>
+    </>
   );
 };
 

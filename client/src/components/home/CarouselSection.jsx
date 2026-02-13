@@ -55,13 +55,15 @@ const CarouselSection = ({ showHeader = true }) => {
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
               variants={textVariants}
             >
-              Our Process <span className="text-primary">The Journey to Better Health</span>
+              Our Process <span className="text-primary"></span>
             </motion.h2>
             <motion.p 
               className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto"
               variants={textVariants}
             >
-              A seamless, guided experience designed to ensure your long-term success.
+            A seamless guided experience designed to ensure your long term health.
+You are a unique individual and your plan deserves to be too.
+
             </motion.p>
           </div>
         )}
