@@ -7,6 +7,8 @@ import HomeApp from '../components/home/HomeApp';
 import Timeline from '../components/home/Timeline';
 import HomeTransformations from '../components/home/HomeTransformations';
 import HomeCTA from '../components/home/HomeCTA';
+import EbookHowItWorks from '../components/ebooks/EbookHowItWorks';
+import MarqueeBanner from '../components/home/MarqueeBanner';
 
 const Home = () => {
   // Scroll to top on mount
@@ -17,12 +19,14 @@ const Home = () => {
   return (
     <div className="bg-white">
       <HomeSwiper />
+      <MarqueeBanner/>
       <HomeAbout />
       <HomeExpect />
       <HomeTransformations />
       <HomeIncluded />
       <HomeApp />
       <Timeline />
+      <EbookHowItWorks/>
       <HomeCTA />
     </div>
   );

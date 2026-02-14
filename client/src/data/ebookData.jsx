@@ -147,22 +147,22 @@ export const ebookComingSoonTopics = [
 export const ebookHowItWorksSteps = [
   {
     icon: <Download className="text-primary" size={32} />,
-    title: "Instant digital download",
-    description: "Get immediate access to your PDF guide as soon as you complete your purchase."
+    title: "Initial consultation call",
+    description: "We start with a deep dive into your goals, lifestyle, and current habits to get a clear understanding about your starting point."
   },
   {
     icon: <BookOpen className="text-primary" size={32} />,
-    title: "Read at your own pace",
-    description: "Access your e-book on any device phone, tablet, or computer whenever you need it."
+    title: "Personalised plan",
+    description: "Receive your custom nutrition and training strategy, fully integrated into the BHP app."
   },
   {
     icon: <PenTool className="text-primary" size={32} />,
-    title: "Practical tools and examples",
-    description: "Includes actionable exercises and real-life examples to help you apply the knowledge."
+    title: "Guided implementation",
+    description: "Start your journey with daily habit tracking and direct support from your coach and our thriving community."
   },
   {
     icon: <Layout className="text-primary" size={32} />,
-    title: "Designed to complement",
-    description: "Works perfectly alongside our coaching programs or as a standalone guide."
+    title: "Sustain and evolve",
+    description: "Regular check ins ensure your plan adapts as you progress towards long term health."
   }
 ];

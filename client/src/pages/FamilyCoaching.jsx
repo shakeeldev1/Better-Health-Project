@@ -6,6 +6,7 @@ import FamilyHowItWorks from '../components/family-coaching/FamilyHowItWorks';
 import FamilyWhyDifferent from '../components/family-coaching/FamilyWhyDifferent';
 import FamilyScenarios from '../components/family-coaching/FamilyScenarios';
 import FamilyCTA from '../components/family-coaching/FamilyCTA';
+import FamilyCoachingPage from '../components/family-coaching/ChoosePlanPage';
 
 const FamilyCoaching = () => {
   // Scroll to top on mount
@@ -16,10 +17,11 @@ const FamilyCoaching = () => {
   return (
     <div className="bg-white">
       <FamilySwiper />
-      <FamilyWhatIs />
-      <FamilyWhoFor />
-      <FamilyHowItWorks />
-      <FamilyWhyDifferent />
+      {/* <FamilyWhatIs /> */}
+    <FamilyCoachingPage/>
+      {/* <FamilyWhoFor /> */}
+      {/* <FamilyHowItWorks /> */}
+      {/* <FamilyWhyDifferent /> */}
       <FamilyScenarios />
       <FamilyCTA />
     </div>

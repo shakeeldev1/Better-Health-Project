@@ -5,7 +5,14 @@ import {
   Users2, GraduationCap, Lightbulb, LineChart,
   Utensils, Activity, Calendar, Share2
 } from 'lucide-react';
-
+import img1 from "../../public/1.jpg"
+import img6 from "../../public/2.jpg"
+import img7 from "../../public/3.jpg"
+import img8 from "../../public/4.jpg"
+import img2 from "../../public/fam.jpg"
+import img3 from "../../public/pocket.jpg"
+import img4 from "../../public/exp.jpg"
+import img5 from "../../public/fo.JPG"
 export const familySwiperSlides = [
   {
     id: 1,
@@ -17,14 +24,14 @@ export const familySwiperSlides = [
     ),
     title: "Healthy Families",
     subtitle: "Personalised health support for the entire household. Everyone moves forward with clarity and structure.",
-    bgImage: 'https://images.unsplash.com/photo-1714646442265-9cec35271c7a?w=1600&auto=format&fit=crop&q=75',
+    bgImage: img1,
     button1: "Join Family Coaching",
     to1: "/contact",
     button2: "Enquire Now",
     to2: "/contact"
   },
   {
-    id: 2,
+    id: 5,
     badge: (
       <span className="flex items-center gap-1">
         <Heart size={14} />
@@ -33,7 +40,7 @@ export const familySwiperSlides = [
     ),
     title: "Real Life Health",
     subtitle: "No extreme rules or separate plans. Just a practical framework your family can actually stick to.",
-    bgImage: 'https://images.unsplash.com/photo-1714646442265-d60970b470e0?w=1600&auto=format&fit=crop&q=75',
+    bgImage:img7,
     button1: "Explore Programs",
     to1: "/contact",
     button2: "Learn More",
@@ -49,7 +56,7 @@ export const familySwiperSlides = [
     ),
     title: "Unified Approach",
     subtitle: "Nutrition and routines that work for all ages, from parents to children, under one plan.",
-    bgImage: 'https://images.unsplash.com/photo-1714646442257-70fbebe63ee2?w=1600&auto=format&fit=crop&q=75',
+    bgImage: img4,
     button1: "Start Journey",
     to1: "/contact",
     button2: "Our Methods",
@@ -65,7 +72,7 @@ export const familySwiperSlides = [
     ),
     title: "Early Habits",
     subtitle: "Set your children up for success by creating structure and understanding around health today.",
-    bgImage: 'https://plus.unsplash.com/premium_photo-1763576566296-957fe9c1023a?w=1600&auto=format&fit=crop&q=75',
+    bgImage: img8,
     button1: "Join Us",
     to1: "/contact",
     button2: "Read Stories",
