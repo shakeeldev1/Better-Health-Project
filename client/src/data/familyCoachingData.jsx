@@ -186,7 +186,7 @@ export const familyHowItWorksData = {
   badge: "Process",
   title: "How It",
   highlightText: "Works",
-  description: "A clear, structured path to better health for your entire family."
+  description: "A clear, structured path to better health for your entire families."
 };
 
 export const familyCTAData = {
