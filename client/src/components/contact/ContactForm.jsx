@@ -9,7 +9,6 @@ import { EMAILJS_CONFIG } from '../../config/emailConfig';
 import { contactFormOptions as options } from '../../data/contactData';
 import GlobalButton from '../common/GlobalButton';
 
-// Variant for the entire left (Form) column
 const formColumnVariants = {
   hidden: { x: -50, opacity: 0 },
   visible: { 
