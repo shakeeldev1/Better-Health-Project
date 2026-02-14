@@ -4,7 +4,7 @@ import { Autoplay, FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import img1 from "../../../public/1.jpg"
-import img2 from "../../../public/2.jpg"
+import img2 from "../../../public/2.JPG"
 import img3 from "../../../public/3.jpg"
 import img4 from "../../../public/4.jpg"
 import img5 from "../../../public/fo.JPG"
