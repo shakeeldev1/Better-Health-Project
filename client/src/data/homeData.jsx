@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle, Layout, MessageCircle, RefreshCw, BarChart3, Apple, Dumbbell, GraduationCap, Headphones, LineChart, FileCheck, ShieldCheck, Eye, Lock, FileText } from 'lucide-react';
 import img1 from "../../public/1.jpg"
-import img6 from "../../public/2.jpg"
+import img6 from "../../public/2.JPG"
 import img7 from "../../public/3.jpg"
 import img8 from "../../public/4.jpg"
 import img2 from "../../public/fam.jpg"
