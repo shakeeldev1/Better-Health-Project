@@ -44,6 +44,14 @@ const FAQAccordion = () => {
     setOpenFAQ(openFAQ === id ? null : id);
   };
 
+  // Keyboard navigation support
+  const handleKeyDown = (e, id) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleFAQ(id);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -71,6 +79,8 @@ const FAQAccordion = () => {
               },
             }}
             className="flex flex-wrap justify-center gap-3 md:gap-4"
+            role="tablist"
+            aria-label="FAQ categories"
           >
             {categories.map((category) => {
               const Icon = category.icon;
@@ -83,18 +93,26 @@ const FAQAccordion = () => {
                     visible: { y: 0, opacity: 1 },
                   }}
                 >
-                  <GlobalButton 
-                    text={category.name}
-                    icon={Icon}
-                    isActive={isActive}
-                    variant="ghost"
-                    className="rounded-xl"
-                    showArrow={false}
+                  <button 
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls={`panel-${category.id}`}
+                    id={`tab-${category.id}`}
+                    className={`px-4 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 ${
+                      isActive 
+                        ? 'bg-[#3E7D72] text-white shadow-lg' 
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900'
+                    }`}
                     onClick={() => {
                       setActiveCategory(category.id);
                       setOpenFAQ(null);
                     }}
-                  />
+                  >
+                    <span className="flex items-center gap-2">
+                      <Icon size={16} />
+                      {category.name}
+                    </span>
+                  </button>
                 </motion.div>
               );
             })}
@@ -115,21 +133,30 @@ const FAQAccordion = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeCategory}
+                id={`panel-${activeCategory}`}
+                role="tabpanel"
+                aria-labelledby={`tab-${activeCategory}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                {faqData[activeCategory].map((faq) => (
+                {faqData[activeCategory].map((faq, index) => (
                   <div
                     key={faq.id}
                     className={`border-b border-gray-100 last:border-b-0 transition-all duration-300 ${
-                      openFAQ === faq.id ? 'bg-primary-muted/50' : 'bg-white hover:bg-gray-50'
+                      openFAQ === faq.id ? 'bg-primary/5' : 'bg-white hover:bg-gray-50'
                     }`}
+                    role="region"
+                    aria-label={faq.question}
                   >
                     <button
                       onClick={() => toggleFAQ(faq.id)}
-                      className="w-full px-6 md:px-10 py-6 flex items-center justify-between text-left transition-all duration-300"
+                      onKeyDown={(e) => handleKeyDown(e, faq.id)}
+                      className="w-full px-6 md:px-10 py-6 flex items-center justify-between text-left transition-all duration-300 focus:outline-none focus:bg-primary/5"
+                      aria-expanded={openFAQ === faq.id}
+                      aria-controls={`faq-answer-${faq.id}`}
+                      id={`faq-question-${faq.id}`}
                     >
                       <span className={`font-bold text-base md:text-lg pr-4 transition-colors duration-300 ${
                         openFAQ === faq.id ? 'text-gray-900' : 'text-gray-700'
@@ -140,6 +167,7 @@ const FAQAccordion = () => {
                         animate={{ rotate: openFAQ === faq.id ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
                         className="flex-shrink-0"
+                        aria-hidden="true"
                       >
                         <ChevronDown className={`w-5 h-5 transition-colors duration-300 ${
                           openFAQ === faq.id ? 'text-primary' : 'text-gray-400'
@@ -150,6 +178,9 @@ const FAQAccordion = () => {
                     <AnimatePresence initial={false}>
                       {openFAQ === faq.id && (
                         <motion.div
+                          id={`faq-answer-${faq.id}`}
+                          role="region"
+                          aria-labelledby={`faq-question-${faq.id}`}
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
