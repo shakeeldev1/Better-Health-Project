@@ -14,6 +14,7 @@ const Ebooks = lazy(() => import('./pages/Ebooks'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
+const Booking = lazy(() => import('./pages/Booking'));
 
 // Loading component
 const PageLoader = () => (
@@ -95,6 +96,7 @@ const router = createBrowserRouter([
       { path: "/contact", element: <Contact /> },
       { path: "/family-coaching", element: <FamilyCoaching /> },
       { path: "/ebooks", element: <Ebooks /> },
+      { path: "/booking", element: <Booking /> },
       { path: "/faq", element: <FAQ /> },
       { path: "/privacy-policy", element: <PrivacyPolicy /> },
       { path: "/terms-and-conditions", element: <TermsAndConditions /> }

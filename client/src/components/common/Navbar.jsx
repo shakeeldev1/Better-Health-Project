@@ -78,7 +78,7 @@ const Navbar = () => {
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
         role="banner"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14 sm:h-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14 sm:h-14">
           
           {/* Logo Section */}
           <Link
@@ -147,16 +147,6 @@ const Navbar = () => {
 
           {/* Right Section (Button & Mobile Toggle) */}
           <div className="flex items-center gap-3 sm:gap-4 z-50">
-            <div className="hidden lg:block">
-              <GlobalButton
-                text="Contact Now"
-                link="/contact"
-                variant="outline"
-                className="rounded-full px-6 py-2 border-white text-white hover:bg-white hover:text-[#3E7D72] transition-colors"
-                showShine={true}
-                showArrow={false}
-              />
-            </div>
 
             {/* Mobile Menu Toggle */}
             <button

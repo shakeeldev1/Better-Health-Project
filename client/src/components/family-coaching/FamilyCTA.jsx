@@ -10,7 +10,7 @@ const FamilyCTA = () => {
       description={data.description}
       buttonText={data.primaryButton.text}
       buttonLink={data.primaryButton.link}
-      className="py-20"
+      className="py-8 md:py-10"
     />
   );
 };

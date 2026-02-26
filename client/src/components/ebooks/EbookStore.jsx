@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ShoppingCart, CheckCircle2, Star } from "lucide-react";
 
 const EbookCard = ({ title, price, tag, color, bgImage }) => (
@@ -30,9 +31,12 @@ const EbookCard = ({ title, price, tag, color, bgImage }) => (
         <span className="text-3xl font-black text-white">{price}</span>
       </div>
 
-      <button className="mt-4 w-full py-3 rounded-xl bg-white text-slate-900 font-bold hover:bg-[#3E7D72] hover:text-white transition-all transform active:scale-95 shadow-lg flex items-center justify-center gap-2">
-        <ShoppingCart size={18} /> Add to Cart
-      </button>
+      <Link 
+        to="/booking"
+        className="mt-4 w-full py-3 rounded-xl bg-white text-slate-900 font-bold hover:bg-[#3E7D72] hover:text-white transition-all transform active:scale-95 shadow-lg flex items-center justify-center gap-2"
+      >
+        <ShoppingCart size={18} /> Buy Now
+      </Link>
     </div>
   </div>
 );
@@ -84,12 +88,12 @@ export default function EbookStore() {
   ];
 
   return (
-    <div className="bg-slate-50 min-h-screen py-20 px-6 font-sans">
+    <div id="shop" className="bg-slate-50 min-h-screen pt-8 px-6 font-sans">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-7xl font-black text-slate-900 mb-4 italic tracking-tighter">
+          <h2 className="text-5xl md:text-5xl font-black text-slate-900 mb-4 italic tracking-tighter">
             THE SHOP<span className="text-[#3E7D72]">.</span>
           </h2>
           <p className="text-slate-500 max-w-xl mx-auto text-lg font-medium">
@@ -98,23 +102,23 @@ export default function EbookStore() {
         </div>
 
         {/* FEATURED BUNDLE (The Superstack) */}
-        <div className="relative mb-24">
+        <div className="relative mb-12">
           <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20 bg-yellow-400 text-black px-8 py-2 rounded-full font-black text-sm tracking-tighter shadow-xl animate-bounce">
             MOST POPULAR - SAVE $40.95
           </div>
 
-          <section className="relative group overflow-hidden rounded-[2.5rem] text-white min-h-[500px] flex items-center shadow-2xl">
+          <section className="relative group overflow-hidden rounded-[2.5rem] text-white min-h-[400px] flex items-center shadow-2xl">
             {/* Main Bundle Background */}
-            <div className="absolute inset-0 z-0 transition-transform duration-1000 group-hover:scale-105">
+            <div className="absolute  inset-0 z-0 transition-transform duration-1000 group-hover:scale-105">
               <img 
                 src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop" 
                 alt="Healthy lifestyle" 
-                className="w-full h-full object-cover"
+                className="w-full h-full  object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/60 to-[#3E7D72]/30" />
             </div>
 
-            <div className="relative z-10 p-8 md:p-16 flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-12">
+            <div className="relative z-10 p-8 md:px-16 flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-12">
               <div className="max-w-xl space-y-6">
                 <div className="flex items-center gap-2 text-yellow-300">
                   {[...Array(5)].map((_, i) => (
@@ -122,7 +126,7 @@ export default function EbookStore() {
                   ))}
                   <span className="text-white/90 font-bold ml-2 tracking-wide">2,000+ HAPPY FAMILIES</span>
                 </div>
-                <h2 className="text-5xl md:text-7xl font-black italic leading-[0.85] tracking-tighter drop-shadow-2xl">
+                <h2 className="text-5xl md:text-5xl font-black italic leading-[0.85] tracking-tighter drop-shadow-2xl">
                   THE ULTIMATE <br /> FAMILY <br /> COLLECTION
                 </h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-bold pt-4">
@@ -135,12 +139,15 @@ export default function EbookStore() {
               </div>
               
               {/* Bundle Purchase Card */}
-              <div className="w-full md:w-80 relative group/card overflow-hidden rounded-3xl p-8 border border-white/20 text-center shadow-2xl backdrop-blur-sm bg-white/5">
+              <div className="w-full md:w-80 relative group/card overflow-hidden rounded-3xl px-5 py-2 border border-white/20 text-center shadow-2xl backdrop-blur-sm bg-white/5">
                 <p className="text-white/60 line-through text-xl font-bold">$139.95</p>
-                <div className="text-7xl font-black text-white mb-6 tracking-tighter">$99</div>
-                <button className="w-full bg-white text-[#3E7D72] py-4 rounded-2xl font-black text-xl hover:bg-yellow-400 hover:text-black transition-all transform hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2">
+                <div className="text-5xl font-black text-white mb-6 tracking-tighter">$99</div>
+                <Link 
+                  to="/booking"
+                  className="w-full bg-white text-[#3E7D72] py-2 rounded-2xl font-black text-xl hover:bg-yellow-400 hover:text-black transition-all transform hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2"
+                >
                   <ShoppingCart size={24} /> BUY NOW
-                </button>
+                </Link>
               </div>
             </div>
           </section>

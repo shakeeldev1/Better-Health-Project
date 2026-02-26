@@ -11,14 +11,14 @@ const FamilyScenarios = () => {
   };
 
   return (
-    <section className="py-12 md:py-20 bg-white overflow-hidden">
+    <section className="py-10 md:py-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <GlobalHeading 
           badge={data.badge}
           title={data.title}
           highlightText={data.highlightText}
           description={data.description}
-          className="mb-12"
+          className="mb-8"
         />
 
         <div className="max-w-5xl mx-auto">

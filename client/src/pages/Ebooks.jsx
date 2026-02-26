@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import EbookSwiper from '../components/ebooks/EbookSwiper';
 import EbookGrid from '../components/ebooks/EbookGrid';
 import EbookHowItWorks from '../components/ebooks/EbookHowItWorks';
-import EbookComingSoon from '../components/ebooks/EbookComingSoon';
-import MarqueeBanner from '../components/ebooks/MarqueeBanner';
+import HomeCTA from "../components/home/HomeCTA"
 import EbookStore from '../components/ebooks/EbookStore';
 
 const Ebooks = () => {
@@ -15,11 +14,10 @@ const Ebooks = () => {
   return (
     <div className="bg-white">
       <EbookSwiper />
-      <MarqueeBanner/>
       <EbookStore/>
-      {/* <EbookGrid /> */}
       <EbookHowItWorks />
-      <EbookComingSoon />
+      {/* <EbookComingSoon /> */}
+<HomeCTA/>
     </div>
   );
 };

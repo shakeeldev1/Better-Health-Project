@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Smartphone, Zap, ShieldCheck, Target } from 'lucide-react';
+import { Check, Smartphone, Zap, ShieldCheck, Target, MessageCircle, Layout, BarChart3 } from 'lucide-react';
 import GlobalHeading from '../common/GlobalHeading';
 import GlobalButton from '../common/GlobalButton';
-import CarouselSection from './CarouselSection';
 import { homeAppFeatures as features, homeAppData as data } from '../../data/homeData';
+import img8 from "../../../public/pocket.jpg"
+import img7 from "../../../public/3.jpg"
+import img2 from "../../../public/exp.jpg"
 
 const HomeApp = () => {
   const containerVariants = {
@@ -32,10 +34,32 @@ const HomeApp = () => {
     <Check className="w-5 h-5" />
   ];
 
+  // App features as cards
+  const appFeatures = [
+    {
+      icon: <MessageCircle className="w-6 h-6" />,
+      title: "Expert Consultation",
+      description: "Deep dive into your goals and lifestyle to build a solid foundation.",
+      image: img8
+    },
+    {
+      icon: <Layout className="w-6 h-6" />,
+      title: "Personalised Planning",
+      description: "Custom nutrition and training strategy built specifically for you.",
+      image: img7
+    },
+    {
+      icon: <BarChart3 className="w-6 h-6" />,
+      title: "Engaging Community",
+      description: "Daily habit tracking and direct support via our dedicated app.",
+      image: img2
+    }
+  ];
+
   return (
-    <section className="py-8 bg-white overflow-hidden">
+    <section className="py-10 md:py-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-primary-muted/30 rounded-[2rem] p-5 md:p-8 lg:p-10 relative overflow-hidden border border-primary/5">
+        <div className="bg-gradient-to-br from-slate-50 via-white to-teal-50/30 rounded-[2rem] p-6 md:p-8 lg:p-10 relative overflow-hidden border border-slate-100">
           {/* Decorative subtle background pattern */}
           <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03] pointer-events-none">
             <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -48,7 +72,7 @@ const HomeApp = () => {
             </svg>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
             {/* Content Left */}
             <motion.div
               variants={containerVariants}
@@ -65,34 +89,28 @@ const HomeApp = () => {
                 className="mb-4"
               />
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                 {features.map((feature, index) => (
                   <motion.div 
                     key={index} 
                     variants={itemVariants}
                     whileHover={{ 
-                      y: -5,
+                      y: -3,
                       scale: 1.02,
-                      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05)"
                     }}
-                    className="flex items-center gap-2.5 bg-white p-3 rounded-xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all duration-300 group cursor-default"
+                    className="flex items-center gap-3 bg-white p-3 rounded-xl shadow-sm border border-slate-100 hover:border-[#3E7D72]/30 hover:shadow-md transition-all duration-300 group cursor-default"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                      <motion.div
-                        whileHover={{ rotate: 15, scale: 1.2 }}
-                        className="flex items-center justify-center"
-                      >
-                        {featureIcons[index] || <Check className="w-5 h-5" />}
-                      </motion.div>
+                    <div className="w-8 h-8 rounded-lg bg-[#3E7D72]/10 flex items-center justify-center text-[#3E7D72] group-hover:bg-[#3E7D72] group-hover:text-white transition-colors duration-300">
+                      {featureIcons[index] || <Check className="w-4 h-4" />}
                     </div>
-                    <span className="text-xs md:text-sm text-gray-700 font-bold group-hover:text-primary transition-colors duration-300">{feature}</span>
+                    <span className="text-xs md:text-sm text-gray-700 font-semibold group-hover:text-[#3E7D72] transition-colors duration-300">{feature}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <motion.div variants={itemVariants} className="flex flex-wrap gap-2.5">
+              <motion.div variants={itemVariants} className="flex flex-wrap gap-3">
                 <GlobalButton 
-                  text={<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-4" />}
+                  text={<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-5" />}
                   link="#"
                   variant="dark"
                   showArrow={false}
@@ -100,7 +118,7 @@ const HomeApp = () => {
                   className="sm"
                 />
                 <GlobalButton 
-                  text={<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" className="h-4" />}
+                  text={<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" className="h-5" />}
                   link="#"
                   variant="dark"
                   showArrow={false}
@@ -110,28 +128,58 @@ const HomeApp = () => {
               </motion.div>
             </motion.div>
 
-            {/* Carousel Right */}
+            {/* App Features as Cards */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, x: 20 }}
-              whileInView={{ opacity: 1, scale: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative flex justify-center lg:justify-center w-full"
+              transition={{ duration: 0.6 }}
+              className="relative"
             >
-              <div className="w-full max-w-md scale-90 md:scale-100">
-                <CarouselSection showHeader={false} />
+              <div className="grid grid-cols-1 gap-4">
+                {appFeatures.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.02 }}
+                    className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+                  >
+                    {/* Background Image */}
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                      style={{ backgroundImage: `url(${feature.image})` }}
+                    />
+                    
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+                    
+                    {/* Content */}
+                    <div className="relative p-5 md:p-6 flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white flex-shrink-0">
+                        {feature.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-white font-bold text-lg mb-1">{feature.title}</h3>
+                        <p className="text-white/80 text-sm leading-relaxed">{feature.description}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
 
               {/* Decorative Floating Elements */}
               <motion.div 
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10" 
+                className="absolute -top-6 -right-6 w-24 h-24 bg-[#3E7D72]/10 rounded-full blur-2xl -z-10" 
               />
               <motion.div 
                 animate={{ y: [0, 15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10" 
+                className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#3E7D72]/10 rounded-full blur-2xl -z-10" 
               />
             </motion.div>
           </div>

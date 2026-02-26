@@ -4,20 +4,16 @@ import GlobalHeading from '../common/GlobalHeading';
 import GlobalCard1 from '../common/GlobalCard1';
 import { homeIncludedItems as items, homeIncludedData as data } from '../../data/homeData';
 
-// --- Framer Motion Configuration ---
-
-// Variants for the main section (staggering the children)
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, // Delay between each card's animation
+      staggerChildren: 0.1,
     },
   },
 };
 
-// Variants for each individual card (slide-up/fade-in)
 const cardItemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -34,7 +30,7 @@ const cardItemVariants = {
 const HomeIncluded = () => {
   return (
     <motion.section 
-      className="w-full bg-[#F3F4F5] py-16 px-4"
+      className="w-full bg-gradient-to-b from-[#F3F4F5] via-white to-[#F3F4F5] py-10 md:py-12 px-4"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -46,13 +42,13 @@ const HomeIncluded = () => {
           title={data.title}
           highlightText={data.highlightText}
           description={data.description}
-          className="mb-12"
+          className="mb-8"
         />
 
         {/* Grid - Perfectly Square Uniform Cards */}
         <div className="max-w-6xl mx-auto">
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4"
             variants={containerVariants}
           >
             {items.map((item, index) => (

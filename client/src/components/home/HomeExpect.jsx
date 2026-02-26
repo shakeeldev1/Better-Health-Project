@@ -8,7 +8,9 @@ import FatLossSection from './FatLossSection';
 const HomeExpect = () => {
   return (
     <>
-    <section className="py-15 bg-white relative overflow-hidden">
+    <FatLossSection/>
+
+    <section className="py-10 md:py-12 bg-white relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft Gradient Orbs */}
@@ -64,7 +66,6 @@ const HomeExpect = () => {
         </div>
       </div>
     </section>
-    <FatLossSection/>
     </>
   );
 };

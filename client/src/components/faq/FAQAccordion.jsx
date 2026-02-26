@@ -53,9 +53,9 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-white py-8 md:py-10">
       {/* Hero Section */}
-      <div className="pt-20 pb-8 px-4">
+      <div className="pb-6 px-4">
         <GlobalHeading 
           badge={data.badge}
           title={data.title}
@@ -66,7 +66,7 @@ const FAQAccordion = () => {
       </div>
 
       {/* Category Filter Buttons */}
-      <div className="px-4 pb-12">
+      <div className="px-4 pb-8">
         <div className="max-w-4xl mx-auto">
           <motion.div 
             initial="hidden"

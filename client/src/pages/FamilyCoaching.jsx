@@ -5,7 +5,7 @@ import FamilyWhoFor from '../components/family-coaching/FamilyWhoFor';
 import FamilyHowItWorks from '../components/family-coaching/FamilyHowItWorks';
 import FamilyWhyDifferent from '../components/family-coaching/FamilyWhyDifferent';
 import FamilyScenarios from '../components/family-coaching/FamilyScenarios';
-import FamilyCTA from '../components/family-coaching/FamilyCTA';
+import HomeCTA from "../components/home/HomeCTA"
 import FamilyCoachingPage from '../components/family-coaching/ChoosePlanPage';
 
 const FamilyCoaching = () => {
@@ -23,7 +23,7 @@ const FamilyCoaching = () => {
       {/* <FamilyHowItWorks /> */}
       {/* <FamilyWhyDifferent /> */}
       <FamilyScenarios />
-      <FamilyCTA />
+      <HomeCTA />
     </div>
   );
 };

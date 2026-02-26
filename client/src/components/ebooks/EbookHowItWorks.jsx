@@ -15,17 +15,16 @@ const EbookHowItWorks = () => {
     visible: { 
       opacity: 1, 
       transition: { 
-        staggerChildren: 0.15 
+        staggerChildren: 0.1 
       } 
     },
   };
 
   const cardVariants = {
-    hidden: { y: 50, opacity: 0, scale: 0.85 },
+    hidden: { y: 30, opacity: 0 },
     visible: { 
       y: 0, 
-      opacity: 1, 
-      scale: 1,
+      opacity: 1,
       transition: {
         type: "spring",
         stiffness: 100,
@@ -35,69 +34,75 @@ const EbookHowItWorks = () => {
   };
 
   return (
-    <section className="relative w-full py-24 overflow-hidden">
-      {/* Background Image Container */}
+    <section className="relative w-full py-12 md:py-16 overflow-hidden bg-slate-50">
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0"
+          className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')",
-            backgroundAttachment: 'fixed',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-teal-50/30"></div>
       </div>
       
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header using GlobalHeading with light mode */}
+        {/* Section Header */}
         <GlobalHeading 
           badge={data.badge}
           title={data.title}
           highlightText={data.highlightText}
           description={data.description}
           center={true}
-          light={true}
-          className="mb-16"
+          className="mb-10 md:mb-12"
         />
 
-        {/* Steps Grid - Using the layout style from the "AboutZone" code */}
+        {/* Steps Grid */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           {steps.map((step, index) => (
             <motion.div 
               key={index}
-              className="bg-white/95 backdrop-blur-sm rounded-lg p-6 flex flex-col border-2 border-white/40 shadow-lg min-h-[200px] group relative hover:border-primary transition-colors duration-300"
+              className="bg-white rounded-2xl p-5 md:p-6 flex flex-col shadow-lg hover:shadow-2xl border border-slate-100 group relative overflow-hidden"
               variants={cardVariants}
-              whileHover={{ y: -5, scale: 1.03, boxShadow: "0 15px 25px rgba(0, 0, 0, 0.2)" }}
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ duration: 0.3 }}
             >
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#3E7D72]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              {/* Number indicator */}
+              <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-400 group-hover:bg-[#3E7D72] group-hover:text-white transition-all duration-300">
+                {index + 1}
+              </div>
+
               {/* Icon Container */}
-              <div className="flex justify-center mb-4">
-                <div className="rounded-full p-3 bg-white/90 text-gray-700 transition-colors duration-300 shadow-sm group-hover:bg-primary group-hover:text-white">
+              <div className="relative z-10 flex justify-center mb-4">
+                <div className="rounded-2xl p-3 bg-gradient-to-br from-[#3E7D72] to-[#2f5f56] text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
                   {React.cloneElement(step.icon, { 
                     size: 24, 
                     strokeWidth: 2,
-                    className: "w-6 h-6 transition-colors duration-300"
+                    className: "w-6 h-6"
                   })}
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center transition-colors duration-300 group-hover:text-primary">
+              <h3 className="relative z-10 text-base md:text-lg font-bold text-gray-900 mb-2 text-center group-hover:text-[#3E7D72] transition-colors duration-300">
                 {step.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-700 text-sm leading-relaxed text-center">
+              <p className="relative z-10 text-gray-600 text-sm leading-relaxed text-center">
                 {step.description}
               </p>
             </motion.div>

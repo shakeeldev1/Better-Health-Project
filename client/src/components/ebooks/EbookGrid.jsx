@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ShoppingCart } from 'lucide-react';
 import { ebooks, ebookGridData as data } from '../../data/ebookData';
 import GlobalHeading from '../common/GlobalHeading';
 
@@ -106,11 +107,15 @@ const EbookGrid = () => {
                     ))}
                   </div>
 
-                  {/* Info Badge */}
+                  {/* Info Badge & Buy Button */}
                   <div className="mt-auto">
-                    <div className="inline-flex items-center gap-2.5 px-4 py-3 bg-gray-50 text-gray-400 rounded-2xl border border-gray-100 w-full justify-center group-hover:bg-primary/5 group-hover:text-primary group-hover:border-primary/20 transition-all duration-500 group-hover:shadow-inner">
-                      <span className="text-[10px] font-black uppercase tracking-[0.2em]">Instant Digital Access</span>
-                    </div>
+                    <Link 
+                      to="/booking"
+                      className="inline-flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#3E7D72] text-white rounded-2xl font-bold hover:bg-[#2f5f56] transition-all duration-500"
+                    >
+                      <ShoppingCart size={16} />
+                      Buy Now
+                    </Link>
                   </div>
                 </div>
               </motion.div>

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import HomeSwiper from '../components/home/HomeSwiper';
-import HomeAbout from '../components/home/HomeAbout';
 import HomeExpect from '../components/home/HomeExpect';
 import HomeIncluded from '../components/home/HomeIncluded';
 import HomeApp from '../components/home/HomeApp';
@@ -20,12 +19,11 @@ const Home = () => {
     <div className="bg-white">
       <HomeSwiper />
       <MarqueeBanner/>
-      <HomeAbout />
       <HomeExpect />
-      <HomeTransformations />
       <HomeIncluded />
       <HomeApp />
       <Timeline />
+      <HomeTransformations />
       <EbookHowItWorks/>
       <HomeCTA />
     </div>

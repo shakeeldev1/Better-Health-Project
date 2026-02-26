@@ -17,17 +17,68 @@ const Timeline = () => {
   });
 
   return (
-    <section ref={containerRef} className="py-16 bg-slate-50 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
+    <section ref={containerRef} className="py-10 md:py-12 lg:py-14 bg-slate-50 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <GlobalHeading 
           badge={data.badge}
           title={data.title}
           highlightText={data.highlightText}
           description={data.description}
-          className="mb-12"
+          className="mb-10 md:mb-12"
         />
 
         <div className="relative max-w-5xl mx-auto">
+          {/* MOBILE VERTICAL TIMELINE */}
+          <div className="lg:hidden relative">
+            {/* Mobile timeline line */}
+            <div className="absolute left-[27px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#3E7D72] to-[#3E7D72]/30" />
+            
+            <div className="space-y-6 md:space-y-8">
+              {timelineSteps.map((step, index) => {
+                const IconComponent = step.icon;
+                const renderIcon = () => {
+                  const iconProps = { 
+                      size: 20, 
+                      className: "text-[#3E7D72]" 
+                  };
+                  return React.isValidElement(IconComponent) 
+                      ? React.cloneElement(IconComponent, iconProps) 
+                      : <IconComponent {...iconProps} />;
+                };
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="relative flex gap-4"
+                  >
+                    {/* Mobile Icon Circle */}
+                    <div className="flex-shrink-0 relative z-10">
+                      <div className="w-14 h-14 rounded-2xl bg-white border-2 border-[#3E7D72] shadow-lg flex items-center justify-center">
+                        {renderIcon()}
+                      </div>
+                    </div>
+                    
+                    {/* Mobile Card */}
+                    <div className="flex-1 bg-white p-4 md:p-5 rounded-2xl border border-slate-200 shadow-[0_2px_15px_rgba(0,0,0,0.02)] -mt-1">
+                      <div className="flex gap-4 items-start">
+                        <div className="flex-1">
+                          <h3 className="text-base md:text-lg font-bold text-slate-800 mb-1">
+                            {step.title}
+                          </h3>
+                          <p className="text-slate-500 text-sm leading-snug">{step.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
           {/* DESKTOP SNAKE LINE */}
           <div className="hidden lg:block absolute inset-0 pointer-events-none">
             <svg className="w-full h-full overflow-visible" viewBox="0 0 1000 600" fill="none">
@@ -46,7 +97,7 @@ const Timeline = () => {
             </svg>
           </div>
 
-          <div className="space-y-12 lg:space-y-16 relative">
+          <div className="hidden lg:block space-y-12 lg:space-y-16 relative">
             {timelineSteps.map((step, index) => {
               const isEven = index % 2 === 0;
 

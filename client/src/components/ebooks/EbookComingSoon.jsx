@@ -10,7 +10,7 @@ const EbookComingSoon = () => {
       description={data.description}
       buttonText="Join the Waitlist"
       buttonLink="/contact"
-      className="py-20"
+      className="py-8 md:py-10"
     />
   );
 };

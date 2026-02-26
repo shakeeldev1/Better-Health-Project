@@ -4,7 +4,7 @@ import img1 from "../../public/1.jpg"
 import img6 from "../../public/2.JPG"
 import img7 from "../../public/3.jpg"
 import img8 from "../../public/4.jpg"
-import img2 from "../../public/fam.jpg"
+import img2 from "../../public/exp.jpg"
 import img3 from "../../public/pocket.jpg"
 import img4 from "../../public/exp.jpg"
 import img5 from "../../public/fo.JPG"
@@ -141,7 +141,8 @@ export const homeAppFeatures = [
   "Nutrition and training access",
   "Progress monitoring",
   "Habit reminders",
-  "Direct coach communication"
+  "Direct coach communication",
+  "Engaging Community & Challenges",
 ];
 
 export const homeTransformationsData = {

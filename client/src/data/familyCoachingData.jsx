@@ -8,7 +8,7 @@ import {
 import img1 from "../../public/1.jpg"
 import img7 from "../../public/3.jpg"
 import img8 from "../../public/4.jpg"
-import img4 from "../../public/exp.jpg"
+import img4 from "../../public/plan2.jpeg"
 export const familySwiperSlides = [
   {
     id: 1,
@@ -104,25 +104,25 @@ export const familyScenarios = [
     icon: <Clock className="text-primary" />,
     title: "Busy Parents",
     description: "Simplify meals and routines so health fits your limited schedule naturally.",
-    bgImage: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp'
+    bgImage: img4,
   },
   {
     icon: <Baby className="text-primary" />,
     title: "Young Children",
     description: "Build healthy habits early without the constant negotiation.",
-    bgImage: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp'
+    bgImage: 'http://localhost:5173/public/4.jpg'
   },
   {
     icon: <Target className="text-primary" />,
     title: "Different Goals",
     description: "Align individual targets like fat loss or energy under one practical family plan.",
-    bgImage: 'https://plus.unsplash.com/premium_photo-1664472736816-21b119ff343c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D'
+    bgImage: 'http://localhost:5173/public/2.JPG'
   },
   {
     icon: <Zap className="text-primary" />,
     title: "Inconsistent Routines",
     description: "Build systems that keep your family moving forward.",
-    bgImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp'
+    bgImage: 'http://localhost:5173/public/footer.jpg'
   }
 ];
 
