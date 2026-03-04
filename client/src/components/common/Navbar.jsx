@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes, FaArrowRight } from "react-icons/fa";
-import GlobalButton from "./GlobalButton";
 import { navItems } from "../../data/commonData";
 import logo from "../../../public/logo.jpeg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
@@ -71,48 +69,30 @@ const Navbar = () => {
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
           scrolled
             ? "bg-[#3E7D72] backdrop-blur-md shadow-xl py-2"
-            : "bg-[#3E7D72] py-2 lg:py-2"
+            : "bg-[#3E7D72] py-2"
         }`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
         role="banner"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14 sm:h-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
           
           {/* Logo Section */}
           <Link
             to="/"
             onClick={scrollToTop}
-            className="flex items-center min-w-[120px] sm:min-w-[150px] z-50"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            className="flex items-center min-w-[108px] sm:min-w-[140px] z-50"
             aria-label="Better Health Project - Home"
           >
-            <AnimatePresence mode="wait">
-              {!isHovered ? (
-                <motion.img
-                  key="logo-img"
-                  src={logo}
-                  alt="Better Health Project"
-                  className="h-10 sm:h-12 w-auto object-contain"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3 }}
-                />
-              ) : (
-                <motion.div
-                  key="logo-text"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 10 }}
-                  className="text-base sm:text-xl lg:text-2xl font-black tracking-tight uppercase italic bg-gradient-to-r from-white via-[#AF8368] via-[#E77834] to-[#E3B02A] bg-clip-text text-transparent whitespace-nowrap"
-                >
-                  Better Health
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <motion.img
+              src={logo}
+              alt="Better Health Project"
+              className="h-9 sm:h-11 w-auto object-contain"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.35 }}
+            />
           </Link>
 
           {/* Desktop Navigation (Hidden on Mobile/Tablet) */}
@@ -147,6 +127,18 @@ const Navbar = () => {
 
           {/* Right Section (Button & Mobile Toggle) */}
           <div className="flex items-center gap-3 sm:gap-4 z-50">
+            <Link
+              to="/contact"
+              onClick={() => handleNavClick("/contact")}
+              className={`hidden lg:inline-flex items-center justify-center px-4 py-2 rounded-lg border-2 font-semibold transition-all duration-300 ${
+                location.pathname === "/contact"
+                  ? "bg-white text-[#3E7D72] border-white"
+                  : "text-white border-white/70 hover:bg-white hover:text-[#3E7D72]"
+              }`}
+              aria-current={location.pathname === '/contact' ? 'page' : undefined}
+            >
+              Contact
+            </Link>
 
             {/* Mobile Menu Toggle */}
             <button
@@ -188,7 +180,7 @@ const Navbar = () => {
 
             {/* Sliding Menu */}
             <motion.div
-              className="absolute top-0 right-0 w-[85%] sm:w-[60%] max-w-sm h-[100dvh] bg-white shadow-2xl flex flex-col p-6 overflow-y-auto"
+              className="absolute top-0 right-0 w-[88%] sm:w-[60%] max-w-sm h-[100dvh] bg-white shadow-2xl flex flex-col p-5 sm:p-6 overflow-y-auto"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}

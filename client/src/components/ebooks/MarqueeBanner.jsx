@@ -4,18 +4,19 @@ export default function MarqueeBanner() {
   const text = "ALL NEW EBOOK SHOP NOW";
 
   // Shared styles for the marquee rows
-  const rowStyles = "flex whitespace-nowrap min-w-full shrink-0 items-center justify-around animate-scroll hover:[animation-play-state:paused]";
+  const rowStyles = "flex whitespace-nowrap min-w-full shrink-0 items-center justify-around ebooks-marquee-scroll hover:[animation-play-state:paused]";
 
   return (
     <>
       {/* Injecting the keyframes via a style tag so it works in one file */}
       <style>{`
-        @keyframes scroll {
+        @keyframes ebooks-marquee-scroll {
           from { transform: translateX(0); }
           to { transform: translateX(-100%); }
         }
-        .animate-scroll {
-          animation: scroll 30s linear infinite;
+        .ebooks-marquee-scroll {
+          animation: ebooks-marquee-scroll 30s linear infinite;
+          will-change: transform;
         }
       `}</style>
 

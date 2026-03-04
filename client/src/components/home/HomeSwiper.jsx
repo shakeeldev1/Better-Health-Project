@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SummerPromo = () => {
   return (
-    <div className="bg-gray-100 min-h-[100svh]relative pt-6 flex items-center justify-center">
+    <div className="bg-gray-100 min-h-[calc(100svh-3.5rem)] pt-6 md:pt-8 flex items-center justify-center">
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
@@ -51,7 +51,7 @@ const SummerPromo = () => {
               </Link>
 
               <Link
-               to="family-coaching"
+               to="/family-coaching"
                 className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 bg-gray-800 text-white text-sm sm:text-base font-medium rounded-md hover:bg-gray-900 transition-all duration-300 group w-full sm:w-auto"
               >
                 CLIENT RESULTS

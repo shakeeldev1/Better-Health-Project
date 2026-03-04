@@ -4,10 +4,8 @@ import './index.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <div className="max-w-[1440px] mx-auto">
   <StrictMode>
     <App />
   </StrictMode>
-  </div>
   ,
 )

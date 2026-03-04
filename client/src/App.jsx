@@ -80,9 +80,11 @@ const MainLayout = () => {
     <>
       <Toaster position="top-right" richColors />
       <Navbar />
-      <Suspense fallback={<PageLoader />}>
-        <Outlet />
-      </Suspense>
+      <main id="main-content" className="min-h-[calc(100dvh-4rem)] pt-14">
+        <Suspense fallback={<PageLoader />}>
+          <Outlet />
+        </Suspense>
+      </main>
       <Footer />
     </>
   )

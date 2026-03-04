@@ -21,17 +21,18 @@ export default function MarqueeBanner() {
   ];
 
   // Shared styles for the marquee rows
-  const rowStyles = "flex whitespace-nowrap shrink-0 items-center animate-scroll hover:[animation-play-state:paused]";
+  const rowStyles = "flex whitespace-nowrap shrink-0 items-center home-marquee-scroll hover:[animation-play-state:paused]";
 
   return (
     <>
       <style>{`
-        @keyframes scroll {
+        @keyframes home-marquee-scroll {
           from { transform: translateX(0); }
           to { transform: translateX(-100%); }
         }
-        .animate-scroll {
-          animation: scroll 60s linear infinite;
+        .home-marquee-scroll {
+          animation: home-marquee-scroll 60s linear infinite;
+          will-change: transform;
         }
       `}</style>
 

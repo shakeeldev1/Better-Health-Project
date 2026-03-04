@@ -6,6 +6,7 @@ const GlobalButton = ({
   text, 
   link, 
   className = "", 
+  size = "md",
   variant = "primary", // primary, secondary, outline, dark
   showArrow = true,
   showShine = true,
@@ -38,7 +39,8 @@ const GlobalButton = ({
     lg: "py-3.5 px-8 text-base"
   };
 
-  const currentSize = typeof sizes[className] !== 'undefined' ? sizes[className] : sizes.md;
+  const fallbackSizeKey = typeof sizes[className] !== 'undefined' ? className : size;
+  const currentSize = sizes[fallbackSizeKey] || sizes.md;
 
   const content = (
     <>
