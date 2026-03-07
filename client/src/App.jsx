@@ -5,6 +5,7 @@ import Footer from './components/common/Footer';
 import Navbar from './components/common/Navbar';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { Toaster } from 'sonner';
+import EBTTransformations from './components/Result';
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
@@ -100,6 +101,7 @@ const router = createBrowserRouter([
       { path: "/ebooks", element: <Ebooks /> },
       { path: "/booking", element: <Booking /> },
       { path: "/faq", element: <FAQ /> },
+      { path: "/result", element: <EBTTransformations /> },
       { path: "/privacy-policy", element: <PrivacyPolicy /> },
       { path: "/terms-and-conditions", element: <TermsAndConditions /> }
     ]
