@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+// import { Star } from 'lucide-react';
 
 const GlobalHeading = ({ 
   badge = "Features", 
@@ -28,10 +28,7 @@ const GlobalHeading = ({
       viewport={{ once: true, amount: 0.5 }} 
       variants={headerAnimation} 
     > 
-      <div className={`inline-flex items-center gap-1 ${light ? 'bg-white/10 text-white' : 'bg-primary-muted text-primary'} uppercase tracking-wider text-xs font-medium px-3 py-1 rounded-full mb-3`}> 
-        <Star className="w-3 h-3" /> 
-        {badge} 
-      </div> 
+    
       <h2 className={`text-xl sm:text-3xl lg:text-5xl font-bold ${light ? 'text-white' : 'text-gray-800'} mb-2`}> 
         {title} <span className={light ? 'text-primary-light' : 'text-primary'}>{highlightText}</span> 
       </h2> 

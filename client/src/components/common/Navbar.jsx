@@ -82,13 +82,13 @@ const Navbar = () => {
           <Link
             to="/"
             onClick={scrollToTop}
-            className="flex items-center min-w-[108px] sm:min-w-[140px] z-50"
+            className="flex items-center min-w-[120px] sm:min-w-[160px] z-50"
             aria-label="Better Health Project - Home"
           >
             <motion.img
               src={logo}
               alt="Better Health Project"
-              className="h-9 sm:h-11 w-auto object-contain"
+              className="h-10 sm:h-14 w-auto object-contain"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.35 }}

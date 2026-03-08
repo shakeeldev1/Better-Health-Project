@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import exp from "/public/3.jpg"
 
 const steps = [
   "Enquire about family coaching",
@@ -10,7 +11,6 @@ const steps = [
   "Access your unique family plan",
   "Create lasting healthy habits as a family",
 ];
-
 export default function FamilyCoachingPage() {
   return (
     <div className="py-10 md:py-12 bg-gray-50">
@@ -18,7 +18,7 @@ export default function FamilyCoachingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
 
           {/* Sidebar Steps */}
-          <div className="space-y-3">
+          <div className="space-y-7">
             <h2 className="font-bold text-lg mb-4 text-gray-800">
               HOW FAMILY COACHING WORKS
             </h2>
@@ -56,9 +56,9 @@ export default function FamilyCoachingPage() {
               </div>
 
               {/* Image Section */}
-              <div className="w-full h-48 md:h-64 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden">
+              <div className="w-full h-75 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden">
                 <img
-                  src="https://better-health-project.vercel.app/assets/1-CB2Gr1JZ.jpg"
+                  src={exp}
                   alt="Happy family"
                   className="w-full h-full object-cover"
                 />

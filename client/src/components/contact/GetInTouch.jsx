@@ -65,6 +65,7 @@ const itemVariants = {
 const GetInTouch = () => {
   return (
     <motion.div 
+      id="contact-form"
       className="w-full bg-gray-50 flex items-center justify-center overflow-hidden"
       style={{ minHeight: 'calc(100vh - 4rem)' }}
       variants={sectionVariants}

@@ -122,7 +122,7 @@ export const familyScenarios = [
     icon: <Zap className="text-primary" />,
     title: "Inconsistent Routines",
     description: "Build systems that keep your family moving forward.",
-    bgImage: 'http://localhost:5173/public/footer.jpg'
+    bgImage: 'http://localhost:5173/public/exp.jpg'
   }
 ];
 

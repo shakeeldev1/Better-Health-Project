@@ -8,7 +8,7 @@ import HomeTransformations from '../components/home/HomeTransformations';
 import HomeCTA from '../components/home/HomeCTA';
 import EbookHowItWorks from '../components/ebooks/EbookHowItWorks';
 import MarqueeBanner from '../components/home/MarqueeBanner';
-import EBTTransformations from '../components/Result';
+// import EBTTransformations from '../components/Result';
 
 const Home = () => {
   // Scroll to top on mount
@@ -25,7 +25,7 @@ const Home = () => {
       <HomeApp />
       <Timeline />
       <HomeTransformations />
-      <EBTTransformations/>
+      {/* <EBTTransformations/> */}
       <EbookHowItWorks/>
       <HomeCTA />
     </div>

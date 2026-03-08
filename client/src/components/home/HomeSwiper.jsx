@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SummerPromo = () => {
   return (
-    <div className="bg-gray-100 min-h-[calc(100svh-3.5rem)] pt-4 md:pt-8 flex items-center justify-center">
+    <div className="bg-gray-100 min-h-[calc(100svh-3.5rem)] pt-4 md:pt-4 flex items-center justify-center">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
           {/* Image Column */}
@@ -12,14 +12,14 @@ const SummerPromo = () => {
             <img
               src={joimg}
               alt="Healthy Parent"
-              className="w-full rounded-3xl shadow-xl object-cover aspect-[4/3] max-h-[60vh] md:max-h-full"
+              className="w-full rounded-xl shadow-xl object-cover aspect-[4/3] max-h-[50vh] md:max-h-full"
             />
           </div>
 
           {/* Content Column */}
-          <div className="w-full md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left order-2 md:order-2 py-6 md:py-16">
+          <div className="w-full md:w-1/2 space-y-2 md:space-y-2 text-center md:text-left order-2 md:order-2 pb-4 md:pb-4">
             {/* Heading */}
-            <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-snug md:leading-tight">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold leading-snug md:leading-tight">
               Finally Become The Strong & Energetic
               <span className=" text-[#3E7D72] ml-2 mt-1">
                 Parent That Other Parents Will Be Jealous Of.
@@ -32,14 +32,14 @@ const SummerPromo = () => {
               plans.
             </p>
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-2 sm:mt-2 justify-center md:justify-start">
               <Link
-                to="/ebooks"
-                className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 bg-[#121313] text-white text-sm sm:text-base font-medium rounded-md hover:bg-[#3E7D72] transition-all duration-300 group w-full sm:w-auto"
+                to="/booking"
+                className="inline-flex items-center justify-center px-4 py-3 sm:px-5  bg-[#3E7D72] text-white text-sm font-bold rounded-md hover:bg-orange-500 hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 group w-full sm:w-auto"
               >
                 GET STARTED
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform"
+                  className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
                   fill="currentColor"
                   viewBox="0 0 512 512"
                 >
@@ -49,11 +49,11 @@ const SummerPromo = () => {
 
               <Link
                 to="/result"
-                className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 bg-white shadow-2xl text-sm sm:text-base font-medium rounded-md hover:bg-[#3E7D72] hover:text-white transition-all duration-300 group w-full sm:w-auto"
+                className="inline-flex items-center justify-center px-3 py-3 sm:px-4  bg-white shadow-lg text-sm font-bold rounded-md hover:bg-orange-500 hover:text-white hover:shadow-orange-500/30 transition-all duration-300 group w-full sm:w-auto border border-gray-200"
               >
                 CLIENT RESULTS
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform"
+                  className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
                   fill="currentColor"
                   viewBox="0 0 512 512"
                 >

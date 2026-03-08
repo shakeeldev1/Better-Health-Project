@@ -90,7 +90,7 @@ export const ContactForm = () => {
 
   return (
     <motion.div 
-      className="bg-white rounded-xl shadow-2xl p-6 sm:p-8 transition-shadow duration-300"
+      id='contact' className="bg-white rounded-xl shadow-2xl p-6 sm:p-8 transition-shadow duration-300"
       variants={formColumnVariants}
     >
       {/* Title with Icon */}

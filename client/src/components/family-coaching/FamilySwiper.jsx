@@ -71,18 +71,18 @@ const FamilySwiper = () => {
           
           {/* Image */}
           <div className="order-1 md:order-2">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl">
               <img 
                 src={famimg}
                 alt="Family wellness" 
                 className="w-full h-64 md:h-80 lg:h-96 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t  from-black/30 via-transparent to-transparent" />
               
               {/* Overlay badge */}
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl shadow-lg">
-                <p className="text-sm font-bold text-gray-900">Start Your Family Journey</p>
-              </div>
+              <Link to="/contact" className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-3 rounded cursor-pointer hover:bg-[#3E7D72]  shadow-lg">
+                <p className="text-sm font-bold  hover:text-white">Start Your Family Journey</p>
+              </Link>
             </div>
           </div>
         </div>

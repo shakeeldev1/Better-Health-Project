@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HiArrowRight } from 'react-icons/hi2';
+import resultImg from "../../public/hero.jpeg";
 
 const EBTTransformations = () => {
   // Proxy helps bypass CORS issues so images show up in development/production
@@ -38,8 +39,35 @@ const EBTTransformations = () => {
     <section className="bg-gray-100 py-16 md:py-12 font-sans text-gray-800 overflow-hidden">
       <div className="container mx-auto max-w-7xl px-4">
         
+        {/* Hero Image Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-12 md:mb-16"
+        >
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
+            <img 
+              src={resultImg}
+              alt="Better Health Project Transformation" 
+              className="w-full h-100 md:h-100 lg:h-100 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+            
+            {/* Overlay Text */}
+            <div className="absolute bottom-6 left-6 right-6">
+              <div className="bg-white/95 backdrop-blur-sm px-6 py-4 rounded-2xl inline-block">
+                <p className="text-gray-900 font-bold text-lg md:text-xl">
+                  Real People. Real Results. <span className="text-[#3E7D72]">Real Transformation.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Header Section */}
-        {/* <div className="text-center mb-12 md:mb-20">
+        <div className="text-center mb-12 md:mb-16">
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -47,10 +75,10 @@ const EBTTransformations = () => {
           >
             The Wall of Results
           </motion.span>
-          <h2 className="text-5xl md:text-5xl font-bold uppercase text-gray-900 font-sans leading-[0.9] tracking-tight">
-            Better <span className="text-[#3E7D72]">Transformations</span>
+          <h2 className="text-4xl md:text-6xl font-bold uppercase text-gray-900 font-sans leading-tight tracking-tight">
+            Client <span className="text-[#3E7D72]">Transformations</span>
           </h2>
-        </div> */}
+        </div>
 
         {/* 24-Image Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
