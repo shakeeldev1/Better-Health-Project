@@ -1,90 +1,107 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaArrowRight, FaHeart, FaUsers, FaChild } from 'react-icons/fa';
-import { motion } from 'framer-motion';
-import famimg from "../../../public/fame.jpeg"
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
+import famimg from "../../../public/fame.jpeg";
 
 const FamilySwiper = () => {
   return (
-    <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-teal-50/30">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.1, 1],
-            opacity: [0.1, 0.2, 0.1]
-          }}
-          transition={{ duration: 10, repeat: Infinity }}
-          className="absolute -top-20 -right-20 w-96 h-96 bg-[#3E7D72]/10 rounded-full blur-3xl"
-        />
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.15, 0.1]
-          }}
-          transition={{ duration: 12, repeat: Infinity, delay: 2 }}
-          className="absolute -bottom-20 -left-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl"
-        />
-      </div>
+    <section className="relative py-10 md:py-16 overflow-hidden bg-white">
+      {/* Subtle background decoration */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -z-10 skew-x-[-12deg] translate-x-1/4" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Text Content */}
-          <div className="order-2 md:order-1">
-            {/* Badge */}
-            {/* <div className="flex items-center gap-2 mb-4">
-              <div className="flex -space-x-2">
-                <FaHeart className="text-amber-500 text-xl" />
-                <FaUsers className="text-[#3E7D72] text-lg" />
-                <FaChild className="text-amber-500 text-base" />
-              </div>
-              <span className="text-sm font-bold text-[#3E7D72] uppercase tracking-wider">Family Coaching</span>
-            </div> */}
-            
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
-              Healthier Families, <span className="text-[#3E7D72]">Together</span>
-            </h1>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Align your entire household with practical nutrition and movement strategies that work for everyone. Create lasting healthy habits as a family.
-            </p>
-            
-            {/* Features */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              {["Family Plans", "Group Support", "All Ages"].map((feature, i) => (
-                <div key={i} className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
-                  <div className="w-2 h-2 bg-[#3E7D72] rounded-full" />
-                  <span className="text-sm font-medium text-gray-700">{feature}</span>
+          <div className="order-2 md:order-1 max-w-xl">
+            {/* Tagline */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 mb-4 px-3 py-1 bg-[#3E7D72]/5 text-[#3E7D72] rounded-full"
+            >
+              <div className="w-1.5 h-1.5 bg-[#3E7D72] rounded-full animate-pulse" />
+              <span className="text-xs font-bold uppercase tracking-widest">
+                Better Together
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] mb-6 tracking-tight"
+            >
+              Healthier Families, <br />
+              <span className="text-[#3E7D72]">Made Simple.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg text-gray-500 mb-8 leading-relaxed font-medium"
+            >
+              Practical nutrition and movement strategies tailored for your
+              entire household. Build sustainable health habits that everyone
+              will actually enjoy.
+            </motion.p>
+
+            {/* Feature Points */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="flex flex-wrap gap-x-6 gap-y-2 mb-8"
+            >
+              {["Family Plans", "Group Support", "All Ages"].map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <div className="w-1 h-1 bg-[#3E7D72] rounded-full" />
+                  <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    {item}
+                  </span>
                 </div>
               ))}
-            </div>
-            
-            <div className="flex flex-wrap gap-4">
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center gap-2 bg-[#3E7D72] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#255c53] transition-all hover:scale-105 active:scale-95 group"
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 bg-[#3E7D72] text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-[#3E7D72]/20 hover:bg-[#255c53] transition-all hover:translate-y-[-2px] active:scale-95 group capitalize"
               >
-                Get Started
-                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                Join the program
+                <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform" />
               </Link>
-            </div>
+            </motion.div>
           </div>
-          
-          {/* Image */}
-          <div className="order-1 md:order-2">
-            <div className="relative rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src={famimg}
-                alt="Family wellness" 
-                className="w-full h-64 md:h-80 lg:h-96 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t  from-black/30 via-transparent to-transparent" />
-              
-              {/* Overlay badge */}
-              <Link to="/contact" className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-3 rounded cursor-pointer hover:bg-[#3E7D72]  shadow-lg">
-                <p className="text-sm font-bold  hover:text-white">Start Your Family Journey</p>
-              </Link>
+
+          {/* Image Container */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="order-1 md:order-2"
+          >
+            <div className="relative group">
+              {/* Decorative frame */}
+              <div className="absolute -inset-4 bg-[#3E7D72]/5 rounded-[2.5rem] -rotate-2 -z-10 transition-transform group-hover:rotate-0 duration-700" />
+
+              <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl bg-gray-100">
+                <img
+                  src={famimg}
+                  alt="Family wellness"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

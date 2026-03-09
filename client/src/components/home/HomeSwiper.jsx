@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SummerPromo = () => {
   return (
-    <div className="bg-gray-100 min-h-[calc(100svh-3.5rem)] pt-4 md:pt-4 flex items-center justify-center">
+    <div className="bg-gray-100 min-h-[calc(100svh-4rem)] pt-4 md:pt-4 flex items-center justify-center">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
           {/* Image Column */}
@@ -32,7 +32,7 @@ const SummerPromo = () => {
               plans.
             </p>
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-2 sm:mt-2 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row gap-2 mt-2 justify-center md:justify-start">
               <Link
                 to="/booking"
                 className="inline-flex items-center justify-center px-4 py-3 sm:px-5  bg-[#3E7D72] text-white text-sm font-bold rounded-md hover:bg-orange-500 hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 group w-full sm:w-auto"
@@ -62,14 +62,14 @@ const SummerPromo = () => {
               </Link>
             </div>
             {/* App Store */}
-            <div className="mt-6 sm:mt-8 flex items-center justify-center md:justify-start gap-3">
+            <div className="mt-3 sm:mt-4 flex items-center justify-center md:justify-start gap-2">
               {/* App Store */}
               <Link to="#">
                 <img
                   loading="lazy"
                   src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                   alt="Download on the App Store"
-                  className="h-8  w-auto"
+                  className="h-6 w-auto"
                 />
               </Link>
 
@@ -79,7 +79,7 @@ const SummerPromo = () => {
                   loading="lazy"
                   src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                   alt="Get it on Google Play"
-                  className="h-8 w-auto"
+                  className="h-6 w-auto"
                 />
               </Link>
             </div>

@@ -57,8 +57,8 @@ const Navbar = () => {
   return (
     <>
       {/* Skip to main content link for accessibility */}
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#3E7D72] focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold"
       >
         Skip to main content
@@ -76,8 +76,7 @@ const Navbar = () => {
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
         role="banner"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
-          
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12">
           {/* Logo Section */}
           <Link
             to="/"
@@ -96,7 +95,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation (Hidden on Mobile/Tablet) */}
-          <nav 
+          <nav
             className="hidden lg:flex flex-1 justify-center items-center gap-6 xl:gap-8"
             role="navigation"
             aria-label="Main navigation"
@@ -111,7 +110,7 @@ const Navbar = () => {
                   className={`relative px-2 py-2 text-base font-semibold transition-all duration-300 ${
                     isActive ? "text-white" : "text-white/80 hover:text-white"
                   }`}
-                  aria-current={isActive ? 'page' : undefined}
+                  aria-current={isActive ? "page" : undefined}
                 >
                   <span>{label}</span>
                   {isActive && (
@@ -135,7 +134,9 @@ const Navbar = () => {
                   ? "bg-white text-[#3E7D72] border-white"
                   : "text-white border-white/70 hover:bg-white hover:text-[#3E7D72]"
               }`}
-              aria-current={location.pathname === '/contact' ? 'page' : undefined}
+              aria-current={
+                location.pathname === "/contact" ? "page" : undefined
+              }
             >
               Contact
             </Link>
@@ -143,15 +144,15 @@ const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden p-2 rounded-lg border border-white/30 bg-white/10 hover:bg-white/20 active:scale-95 transition-all"
+              className="lg:hidden p-1.5 rounded-lg border border-white/30 bg-white/10 hover:bg-white/20 active:scale-95 transition-all"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
             >
               {menuOpen ? (
-                <FaTimes size={22} className="text-white" />
+                <FaTimes size={18} className="text-white" />
               ) : (
-                <FaBars size={22} className="text-white" />
+                <FaBars size={18} className="text-white" />
               )}
             </button>
           </div>
@@ -161,7 +162,7 @@ const Navbar = () => {
       {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {menuOpen && (
-          <div 
+          <div
             id="mobile-menu"
             className="fixed inset-0 z-50 lg:hidden"
             role="dialog"
@@ -213,7 +214,7 @@ const Navbar = () => {
                             ? "bg-[#3E7D72] text-white shadow-md"
                             : "text-gray-700 hover:bg-gray-50 active:bg-gray-100"
                         }`}
-                        aria-current={isActive ? 'page' : undefined}
+                        aria-current={isActive ? "page" : undefined}
                       >
                         {label}
                         <FaArrowRight
@@ -225,17 +226,22 @@ const Navbar = () => {
                       </Link>
                     );
                   })}
-                  
+
                   {/* Mobile Contact Button */}
                   <div className="mt-6 pt-6 border-t border-gray-100">
                     <Link
                       to="/contact"
                       onClick={() => handleNavClick("/contact")}
                       className="flex items-center justify-center w-full px-4 py-3.5 rounded-xl border-2 border-[#3E7D72] text-[#3E7D72] font-bold hover:bg-[#3E7D72] hover:text-white transition-all group"
-                      aria-current={location.pathname === '/contact' ? 'page' : undefined}
+                      aria-current={
+                        location.pathname === "/contact" ? "page" : undefined
+                      }
                     >
                       Contact Now
-                      <FaArrowRight className="ml-2 text-sm group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                      <FaArrowRight
+                        className="ml-2 text-sm group-hover:translate-x-1 transition-transform"
+                        aria-hidden="true"
+                      />
                     </Link>
                   </div>
                 </div>
