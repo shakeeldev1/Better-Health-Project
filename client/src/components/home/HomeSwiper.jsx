@@ -19,25 +19,23 @@ const SummerPromo = () => {
           {/* Content Column */}
           <div className="w-full md:w-1/2 space-y-2 md:space-y-2 text-center md:text-left order-2 md:order-2 pb-4 md:pb-4">
             {/* Heading */}
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold leading-snug md:leading-tight">
-              Finally Become The Strong & Energetic
-              <span className=" text-[#3E7D72] ml-2 mt-1">
-                Parent That Other Parents Will Be Jealous Of.
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black leading-tight tracking-tight text-slate-900 uppercase italic">
+              Lose 5kg+ and Get Back To The Fit Parent
+              <span className="text-[#3E7D72] block mt-2">
+                You Were In 12 Weeks.
               </span>
             </h2>
             {/* Description */}
-            <p className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-lg max-w-md md:max-w-lg mx-auto md:mx-0 leading-relaxed">
-              Stop waiting for motivation to take action and start getting
-              incredible results today with our personalised meal and nutrition
-              plans.
+            <p className="text-gray-600 text-sm md:text-base lg:text-lg max-w-lg mx-auto md:mx-0 leading-relaxed font-bold">
+              Done-for-you meals. Simple 20-minute workouts. Weekly accountability. No guessing, no overwhelm, no sacrificing time with your family so you can be the energetic parent your kids see.
             </p>
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-2 mt-2 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center md:justify-start">
               <Link
                 to="/booking"
-                className="inline-flex items-center justify-center px-4 py-3 sm:px-5  bg-[#3E7D72] text-white text-sm font-bold rounded-md hover:bg-orange-500 hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 group w-full sm:w-auto"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#3E7D72] text-white text-base font-black rounded-xl hover:bg-[#2f5f56] hover:shadow-2xl hover:shadow-[#3E7D72]/30 transition-all duration-300 group w-full sm:w-auto uppercase tracking-wider"
               >
-                GET STARTED
+                Start My 12-Week Reset
                 <svg
                   className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
                   fill="currentColor"

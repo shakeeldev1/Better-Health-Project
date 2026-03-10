@@ -157,10 +157,10 @@ export const familyWhatIsData = {
 };
 
 export const familyWhoForData = {
-  badge: "Suitability",
-  title: "Who Is This",
-  highlightText: "For?",
-  description: "Our family coaching is designed for households that want to prioritize health together.",
+  badge: "Better Together",
+  title: "Get Your Whole Family Healthier",
+  highlightText: "Together, For Less",
+  description: "You actually save money by doing this together. Both of you lose weight, both of you get your energy back, both of you stay accountable to each other. No one's left behind. Save up to $160 per month by doing our family plan when you join with your family, work colleagues, or friends.",
   image: "https://plus.unsplash.com/premium_photo-1723863614145-cc14b2bca0c8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D"
 };
 
@@ -191,7 +191,7 @@ export const familyCTAData = {
   highlightText: "Family?",
   description: "Join our community of families making health a priority. Let's build a plan that works for you.",
   primaryButton: {
-    text: "Join Family Coaching",
+    text: "Build My Family Plan",
     link: "/contact"
   },
   secondaryButton: {
@@ -202,26 +202,26 @@ export const familyCTAData = {
 
 export const familyWhoForPoints = [
   {
-    title: "Busy Parents",
-    description: "Who want to lead by example and simplify family nutrition without spending hours in the kitchen.",
+    title: "Limited Time",
+    description: "You want results without the gym taking over your life. Efficiency is our priority.",
     icon: <Clock className="w-6 h-6" />,
     color: "bg-blue-50 text-blue-600"
   },
   {
-    title: "Active Households",
-    description: "Who need a clear plan to balance busy schedules, school runs, and work with shared health goals.",
-    icon: <Activity className="w-6 h-6" />,
+    title: "Different Tastes",
+    description: "One meal plan that works for the whole family, not five different dinners every night.",
+    icon: <Utensils className="w-6 h-6" />,
     color: "bg-orange-50 text-orange-600"
   },
   {
-    title: "Health-Conscious Families",
-    description: "Who want a structured approach to wellness that involves everyone and builds lasting habits.",
-    icon: <Heart className="w-6 h-6" />,
+    title: "No More Starting Over",
+    description: "A system that keeps your family moving forward even when life gets messy.",
+    icon: <RefreshCw className="w-6 h-6" />,
     color: "bg-rose-50 text-rose-600"
   },
   {
-    title: "Unified Growth",
-    description: "For households that want to move away from individual diets towards a unified family health culture.",
+    title: "Family Accountability",
+    description: "You support each other, you're both more likely to stick to it and see results.",
     icon: <Users className="w-6 h-6" />,
     color: "bg-emerald-50 text-emerald-600"
   }
