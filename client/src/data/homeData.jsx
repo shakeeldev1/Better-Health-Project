@@ -88,23 +88,28 @@ export const homeIncludedData = {
 export const homeExpectations = [
   {
     icon: <Layout className="text-primary" />,
-    title: "Clear Structure",
-    description: "You follow a personalised plan built around your goals, lifestyle, and schedule."
+    title: "Personalised Plan",
+    description: "Built around your actual schedule so you're not trying to fit fitness into chaos."
   },
   {
     icon: <MessageCircle className="text-primary" />,
-    title: "Ongoing Communication",
-    description: "Regular check-ins, guidance, and feedback keep you on track and supported."
+    title: "Weekly Support",
+    description: "Weekly video check-ins so you're never guessing and always supported."
   },
   {
     icon: <RefreshCw className="text-primary" />,
-    title: "Support That Adapts",
-    description: "Your plan evolves as your life does no rigid rules, no unnecessary stress."
+    title: "Plan Evolving",
+    description: "Life throws curveballs, not rigid rules that don't fit reality. Your plan adapts to you."
   },
   {
     icon: <BarChart3 className="text-primary" />,
-    title: "Real Accountability",
-    description: "We focus on progress, not perfection, with systems that help you stay consistent."
+    title: "Real Progress",
+    description: "We focus on progress, not perfection, with weekly tracking so you see what's actually working."
+  },
+  {
+    icon: <ShieldCheck className="text-primary" />,
+    title: "Our Guarantee",
+    description: "Follow the plan for 12 weeks. If you're not seeing results, we'll extend your coaching for free until you are."
   }
 ];
 
@@ -298,25 +303,25 @@ export const homeTimelineData = [
   {
     step: "01",
     title: "Initial Consultation",
-    description: "We start with a deep dive into your goals, lifestyle, and current habits to build your foundation.",
+    description: "A deep dive into your goals, lifestyle, and current health challenges to build your foundation.",
     icon: <MessageCircle className="text-primary-light" />
   },
   {
     step: "02",
-    title: "Personalised Plan",
-    description: "Receive your custom nutrition and training strategy, fully integrated into the BHP app.",
+    title: "Personalised 12-Week Plan",
+    description: "Receive your custom nutrition and training strategy, built around your busy family schedule.",
     icon: <Layout className="text-primary-light" />
   },
   {
     step: "03",
-    title: "Guided Implementation",
-    description: "Start your journey with daily habit tracking and direct support from your coach.",
+    title: "Daily Habit Tracking",
+    description: "Simplifying the process through our app so you're never overwhelmed by the chaos of life.",
     icon: <RefreshCw className="text-primary-light" />
   },
   {
     step: "04",
-    title: "Sustain & Evolve",
-    description: "Regular check-ins ensure your plan adapts as you progress toward long-term health.",
+    title: "Weekly Support & Evolve",
+    description: "Weekly video check-ins and tracking ensure your plan evolves with the curveballs life throws.",
     icon: <BarChart3 className="text-primary-light" />
   }
 ];

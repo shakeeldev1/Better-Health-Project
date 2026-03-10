@@ -150,12 +150,12 @@ const Booking = () => {
                       : "Book your expert consultation to deep dive into your goals, lifestyle, and build a solid foundation for sustainable health."}
                   </p>
 
-                  <div className="flex items-baseline gap-2 mb-8">
-                    <span className="text-sm font-bold text-gray-400">
-                      Total Price:
+                  <div className="flex flex-col gap-1 mb-8">
+                    <span className="text-xs font-black text-[#3E7D72] uppercase tracking-[0.2em]">
+                      Limited Availability
                     </span>
-                    <span className="text-4xl font-black text-gray-900 tracking-tighter">
-                      ${selectedItem?.price || "FREE"}
+                    <span className="text-3xl md:text-4xl font-black text-gray-900 tracking-tighter uppercase italic">
+                      FREE 30-MINUTE CONSULTATION
                     </span>
                   </div>
 
@@ -207,6 +207,14 @@ const Booking = () => {
               className="bg-white rounded-[2.5rem] shadow-2xl p-8 md:p-10 border border-slate-100 sticky top-24"
             >
               <div className="mb-8">
+                {/* Testimonial Tag */}
+                <div className="bg-[#3E7D72]/5 p-6 rounded-3xl border border-[#3E7D72]/10 mb-8 italic">
+                  <p className="text-slate-700 font-bold text-sm leading-relaxed mb-3">
+                    "After my strategy call with Josh, I finally understood why I wasn't seeing results. His plan actually fits my life."
+                  </p>
+                  <span className="text-[#3E7D72] text-xs font-black uppercase tracking-widest">— Sarah M., Professional Parent</span>
+                </div>
+
                 <h3 className="text-2xl font-black text-gray-900 mb-2 tracking-tighter uppercase italic">
                   Complete Details
                 </h3>
@@ -250,24 +258,40 @@ const Booking = () => {
                       className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-gray-900 placeholder:text-gray-400 placeholder:font-bold focus:ring-2 focus:ring-[#3E7D72]/20 outline-none transition-all font-bold"
                     />
                   </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="challenge"
+                      value={formData.challenge || ""}
+                      onChange={handleChange}
+                      placeholder="What's your biggest health challenge right now?"
+                      className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-gray-900 placeholder:text-gray-400 placeholder:font-bold focus:ring-2 focus:ring-[#3E7D72]/20 outline-none transition-all font-bold"
+                    />
+                  </div>
                 </div>
 
                 <div>
                   <textarea
                     name="message"
-                    rows={3}
+                    rows={2}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Special requests or health goals..."
+                    placeholder="Any other special requests? (Optional)"
                     className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-gray-900 placeholder:text-gray-400 placeholder:font-bold focus:ring-2 focus:ring-[#3E7D72]/20 outline-none transition-all font-bold resize-none"
                   />
+                </div>
+
+                <div className="text-center px-2">
+                  <p className="text-xs font-bold text-slate-500 leading-relaxed italic">
+                    After you submit, you'll be sent to my calendar to lock in your time. Pick a slot that works for you and we're booked.
+                  </p>
                 </div>
 
                 <button
                   type="submit"
                   className="w-full bg-[#3E7D72] text-white font-black py-5 rounded-2xl text-lg uppercase tracking-widest hover:bg-[#2f5f56] transition-all hover:translate-y-[-2px] hover:shadow-2xl hover:shadow-[#3E7D72]/30 active:scale-95 flex items-center justify-center gap-3"
                 >
-                  Confirm Booking <FaArrowRight size={16} />
+                  LOCK IN MY FREE CONSULTATION <FaArrowRight size={16} />
                 </button>
 
                 <div className="flex items-center justify-center gap-2 text-gray-400">

@@ -3,48 +3,24 @@ import { HelpCircle, Shield, Users, MessageCircle } from 'lucide-react';
 
 export const faqs = [
   {
-    question: "What is Better Health Project?",
-    answer: "Better Health Project is a personalised coaching platform designed to help individuals and families build sustainable health habits through nutrition, training, education, and ongoing support. This isn't a one-size-fits-all program everything is tailored to real life."
+    question: "How much time does this actually take?",
+    answer: "About 20-30 minutes a day. Twenty for your workout, ten to check your meal plan. Most clients fit this in before the kids wake up or during lunch."
   },
   {
-    question: "Who is this coaching for?",
-    answer: "Our coaching is for individuals and families who want long-term health improvements without extreme rules or short-term fixes. It’s especially suited for: Busy adults and parents, Families wanting consistent routines, and People who have struggled to stay consistent in the past."
+    question: "Can I eat the foods I like?",
+    answer: "Yeah, 100 percent. No elimination diets, no cutting out carbs or dessert. Real food, real portions. You lose weight eating what you actually enjoy, which means you'll actually stick to it."
   },
   {
-    question: "Do I need to be “fit” to start?",
-    answer: "Not at all. Our coaching is designed for all starting points. Whether you’re new to training or returning after time away, your plan is built around your current ability."
+    question: "What if I've never trained before?",
+    answer: "Perfect position to be in. No bad habits to unlearn. Week one through four, we build your foundation. By week five, your body's ready for more. Most beginners see the fastest results because everything is new stimulus."
   },
   {
-    question: "What does the coaching include?",
-    answer: "Depending on the program, coaching may include: Personalised nutrition guidance, Training programs, Education and habit coaching, Ongoing support and accountability, and Progress tracking through our app. Everything is structured to be clear, manageable, and sustainable."
+    question: "How quickly will I see results?",
+    answer: "Two weeks: energy shift and clothes fit different. Week four: down 2-3kg. Week twelve: down 5kg, stronger, athletic again. If you follow the plan, you'll see results. If you don't, we extend your coaching free. That's the guarantee."
   },
   {
-    question: "How does family coaching work?",
-    answer: "Family coaching supports the entire household with one clear, practical approach. We help families align nutrition, routines, and movement so everyone is working toward better health together without separate plans or added stress."
-  },
-  {
-    question: "How is this different from other programs?",
-    answer: "Most programs focus on short-term results or rigid plans. Better Health Project focuses on: Education over restriction, Systems over motivation, Long-term habits over quick fixes, and Support that adapts to real life."
-  },
-  {
-    question: "How long does it take to see results?",
-    answer: "Results vary depending on consistency, lifestyle, and starting point. Many clients notice improvements in energy, structure, and habits within the first few weeks, with physical results building over time."
-  },
-  {
-    question: "Is there a minimum commitment?",
-    answer: "Some coaching options require a minimum commitment to allow enough time for meaningful progress. Any commitment details are made clear before you join."
-  },
-  {
-    question: "How much does it cost?",
-    answer: "Pricing depends on the coaching option you choose. Full pricing details are provided before purchase, with no hidden fees."
-  },
-  {
-    question: "Can I use the app without coaching?",
-    answer: "The app is designed to support active coaching clients. Some resources and tools may be available independently, but the full experience works best alongside coaching."
-  },
-  {
-    question: "What if I have more questions?",
-    answer: "If you still have questions or want to talk through your options, you can contact us directly. We’re happy to help you decide if Better Health Project is the right fit."
+    question: "What happens after the 12 weeks?",
+    answer: "You've got momentum and you know the system. Some people want to keep going. Some are happy and just want maintenance. It's your call. Twelve weeks gets you the result. What you do after is up to you."
   }
 ];
 
